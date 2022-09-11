@@ -26,8 +26,15 @@ def enqueue(queue, value):
     """Metoda enqueue vlozi do fronty (queue) novy prvek s hodnotou
     (value).
     """
-    pass
-    # TODO
+    new_item = Item()
+    new_item.value = value
+
+    if isEmpty(queue):
+        queue.first = new_item
+    else:
+        queue.last.left = new_item
+
+    queue.last = new_item
 
 
 def dequeue(queue):
@@ -35,14 +42,21 @@ def dequeue(queue):
     Vraci hodnotu (value) odebraneho prvku, pokud je fronta prazdna,
     vraci None
     """
-    pass
-    # TODO
+    if isEmpty(queue):
+        return None
+
+    deleted_item = queue.first
+    if queue.first.left is None:
+        queue.first = None
+        queue.last = None
+        return deleted_item.value
+    queue.first = queue.first.left
+    return deleted_item.value
 
 
 def isEmpty(queue):
     """isEmpty() vraci True v pripade prazdne fronty, jinak False."""
-    pass
-    # TODO
+    return queue.last is None and queue.first is None
 
 
 # Testy implmentace
@@ -56,8 +70,8 @@ def test_enqueue_empty():
         print("FAIL")
         return
 
-    if (q.first.value is 1 and q.first.left is None and
-            q.last.value is 1 and q.last.left is None):
+    if (q.first.value == 1 and q.first.left is None and
+            q.last.value == 1 and q.last.left is None):
         print("OK")
     else:
         print("FAIL")
@@ -78,7 +92,7 @@ def test_enqueue_nonempty():
     if q.first is None or q.last is None:
         print("FAIL")
         return
-    if q.last.value is 2 and q.first is i and q.first.left.value is 2:
+    if q.last.value == 2 and q.first is i and q.first.left.value == 2:
         print("OK")
     else:
         print("FAIL")
@@ -108,7 +122,7 @@ def test_dequeue_nonempty():
 
     v = dequeue(q)
 
-    if v is not 1 or q.first is not None or q.last is not None:
+    if v != 1 or q.first is not None or q.last is not None:
         print("FAIL")
     else:
         print("OK")
