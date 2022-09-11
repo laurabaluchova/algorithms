@@ -48,8 +48,12 @@ def insert(linkedList, value):
 
 def print_list(linkedList):
     """Metoda print_list() vypise seznam linkedList."""
-    pass
-    # TODO
+    actual_node = linkedList.first
+    while actual_node is not None:
+        print(actual_node.value, end=" ")
+        if actual_node.next is not None:
+            print("<->", end=" ")
+        actual_node = actual_node.next
 
 
 def search(linkedList, value):
@@ -57,9 +61,6 @@ def search(linkedList, value):
     value v seznamu linkedList. Pokud se hodnota v seznamu nenachazi,
     vraci None.
     """
-    if linkedList.is_empty():
-        return None
-
     actual_node = linkedList.first
     while actual_node is not None:
         if value == actual_node.value:
@@ -71,8 +72,18 @@ def search(linkedList, value):
 
 def delete(linkedList, node):
     """Metoda delete() smaze uzel node v seznamu linkedList."""
-    pass
-    # TODO
+    if node is None:
+        return
+
+    if node.prev is None:
+        linkedList.first = node.next
+    else:
+        node.prev.next = node.next
+
+    if node.next is None:
+        linkedList.last = node.prev
+    else:
+        node.next.prev = node.prev
 
 
 # Testy implmentace
@@ -86,7 +97,7 @@ def test_insert_empty():
         print("FAIL")
         return
 
-    if (l.first.value is 1 and l.last.value is 1 and
+    if (l.first.value == 1 and l.last.value == 1 and
             l.first.next is None and l.first.prev is None):
         print("OK")
     else:
@@ -109,8 +120,8 @@ def test_insert_nonempty():
         print("FAIL")
         return
 
-    if (l.last.value is 2 and l.last.prev is not None and
-            l.last.prev == l.first and l.first.value is 1):
+    if (l.last.value == 2 and l.last.prev is not None and
+            l.last.prev == l.first and l.first.value == 1):
         print("OK")
     else:
         print("FAIL")
@@ -132,6 +143,7 @@ def test_search_exist():
     l.last = n2
 
     i = search(l, 2)
+
 
     if i is n2:
         print("OK")
@@ -266,7 +278,7 @@ def test_insert_return():
     l = LinkedList()
     n = insert(l, 1)
 
-    if n is None or n.value is not 1:
+    if n is None or n.value != 1:
         print("FAIL")
     else:
         print("OK")
