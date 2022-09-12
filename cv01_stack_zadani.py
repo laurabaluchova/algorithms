@@ -24,24 +24,36 @@ def push(stack, value):
     """Metoda push() vlozi na vrchol zasobniku (stack) novy prvek
     s hodnotou (value).
     """
-    pass
-    # TODO
+    new_item = Item()
+    new_item.value = value
 
+    old_stack_top = stack.top
+    stack.top = new_item
+
+    if not is_empty(stack):
+        new_item.below = old_stack_top
 
 def pop(stack):
     """Metoda pop() odebere vrchni prvek zasobniku. Vraci hodnotu
     (value) odebraneho prvku, pokud je zasobnik prazdny vraci None.
     """
-    pass
-    # TODO
+    if is_empty(stack):
+        return None
+
+    popped_item = stack.top
+
+    stack.top = stack.top.below
+    popped_item.below = None
+
+    return popped_item.value
+
 
 
 def is_empty(stack):
     """Metoda isEmpty() vraci True v pripade prazdneho zasobniku,
     jinak False.
     """
-    pass
-    # TODO
+    return stack.top is None
 
 
 # Testy implementace
@@ -55,7 +67,7 @@ def test_push_empty():
         print("FAIL")
         return
 
-    if s.top.value is 1 and s.top.below is None:
+    if s.top.value == 1 and s.top.below is None:
         print("OK")
     else:
         print("FAIL")
@@ -103,11 +115,29 @@ def test_pop_nonempty():
 
     v = pop(s)
 
-    if v is not 1 or s.top is not None:
+    if v != 1 or s.top is not None:
         print("FAIL")
     else:
         print("OK")
 
+def test_pop_multiple_items():
+    print("Test 4b Odebirani ze zasobniku s vice prvkami: ", end="")
+    stack = Stack()
+    item1 = Item()
+    item1.value = 1
+
+    item2 = Item()
+    item2.value = 2
+    item2.below = item1
+
+    stack.top = item2
+
+    popped = pop(stack)
+
+    if popped != item2.value or stack.top != item1:
+        print("FAIL")
+    else:
+        print("OK")
 
 def test_is_empty_empty():
     print("Test 5. isEmpty na prazdnem zasobniku: ", end="")
@@ -140,5 +170,6 @@ if __name__ == '__main__':
     test_push_nonempty()
     test_pop_empty()
     test_pop_nonempty()
+    test_pop_multiple_items()
     test_is_empty_empty()
     test_is_empty_nonempty()
