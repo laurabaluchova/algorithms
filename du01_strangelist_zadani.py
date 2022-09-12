@@ -35,7 +35,11 @@
 # Definujte datovou strukturu StrangeList.
 # Muzete se inspirovat definici ze zakladniho domaciho ukolu.
 
-# TODO
+class StrangeList:
+
+    def __init__(self):
+        self.first = None
+        self.last = None
 
 
 # Ukol 2.
