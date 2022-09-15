@@ -66,10 +66,19 @@ def list_to_strange_list(linked_list):
             strange_list.first = strange_list_node
 
         strange_list_node.prev = previous_node
+
+        if does_pointing_node_exist(strange_list_node) is True:
+            pointing_node = strange_list_node.prev.prev
+            pointing_node.next = strange_list_node
+
         previous_node = strange_list_node
         linked_list_node = linked_list_node.next
-
     return strange_list
+
+
+def does_pointing_node_exist(node):
+    return node.prev is not None and node.prev.prev is not None
+
 
 
 # Ukol 3.
