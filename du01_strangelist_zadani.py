@@ -86,8 +86,22 @@ def does_pointing_node_exist(node):
 # ukazatele first a last jsou nastaveny spravne.
 
 def check_strange_list(strange_list):
-    pass
-    # TODO
+    if strange_list.first == strange_list.last:
+        return True
+
+    if strange_list.first.prev is not None or strange_list.last.next is not None:
+        return False
+
+    actual_node = strange_list.first
+
+    while actual_node is not None:
+        next_node = actual_node.next
+        if next_node is None and strange_list.last.prev == actual_node:
+            return True
+        if next_node.prev.prev is not actual_node:
+            return False
+        actual_node = next_node.prev
+    return True
 
 
 def test_list_to_strange_list_nonempty():
@@ -112,5 +126,129 @@ def test_list_to_strange_list_nonempty():
     strange_list = list_to_strange_list(linked_list)
     #TODO: check pointers
 
+def test_check_strange_list_correct_odd():
+    strange_list = StrangeList()
 
-test_list_to_strange_list_nonempty()
+    node1 = Node()
+    node1.value = 1
+
+    node2 = Node()
+    node2.value = 2
+    node2.prev = node1
+
+    node3 = Node()
+    node3.value = 3
+    node1.next = node3
+    node3.prev = node2
+
+    strange_list.first = node1
+    strange_list.last = node3
+
+    is_correct = check_strange_list(strange_list)
+
+    print("Test correct strange list with odd length: ", end="")
+    if is_correct:
+        print("OK")
+    else:
+        print("FAIL")
+
+def test_check_strange_list_correct_even():
+    strange_list = StrangeList()
+
+    node1 = Node()
+    node1.value = 1
+
+    node2 = Node()
+    node2.value = 2
+    node2.prev = node1
+
+    node3 = Node()
+    node3.value = 3
+    node1.next = node3
+    node3.prev = node2
+
+    node4 = Node()
+    node4.value = 4
+    node2.next = node4
+    node4.prev = node3
+
+    strange_list.first = node1
+    strange_list.last = node4
+
+    is_correct = check_strange_list(strange_list)
+
+    print("Test correct strange list with even length: ", end="")
+    if is_correct:
+        print("OK")
+    else:
+        print("FAIL")
+
+def test_check_strange_list_incorrect():
+    strange_list = StrangeList()
+
+    node1 = Node()
+    node1.value = 1
+
+    node2 = Node()
+    node2.value = 2
+    node2.prev = node1
+
+    node3 = Node()
+    node3.value = 3
+    node1.next = node2
+    node3.prev = node2
+
+    node4 = Node()
+    node4.value = 4
+    node2.next = node4
+    node4.prev = node3
+
+    strange_list.first = node1
+    strange_list.last = node4
+
+    is_correct = check_strange_list(strange_list)
+
+    print("Test incorrect strange list with wrong next pointer: ", end="")
+    if not is_correct:
+        print("OK")
+    else:
+        print("FAIL")
+
+def test_check_strange_list_correct_one_node():
+    strange_list = StrangeList()
+
+    node1 = Node()
+    node1.value = 1
+
+    strange_list.first = node1
+    strange_list.last = node1
+
+    is_correct = check_strange_list(strange_list)
+
+    print("Test correct strange list with one node: ", end="")
+    if is_correct:
+        print("OK")
+    else:
+        print("FAIL")
+
+
+def test_check_strange_list_empty():
+    strange_list = StrangeList()
+
+    is_correct = check_strange_list(strange_list)
+
+    print("Test correct strange list empty: ", end="")
+    if is_correct:
+        print("OK")
+    else:
+        print("FAIL")
+
+
+
+
+#test_list_to_strange_list_nonempty()
+test_check_strange_list_correct_odd()
+test_check_strange_list_correct_even()
+test_check_strange_list_incorrect()
+test_check_strange_list_correct_one_node()
+test_check_strange_list_empty()
