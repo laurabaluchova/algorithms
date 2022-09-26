@@ -1,14 +1,4 @@
-#!/usr/bin/python3
 import random
-
-
-###########################
-# Dotaz studenta:
-#
-#
-###########################
-
-# Chcete-li dostat odpoved, vlozte do nazvu souboru heslo KONTROLA.
 
 
 # Vasim ukolem bude naimplementovat rekurzivni a iterativni verze
@@ -31,8 +21,19 @@ def binary_search_recursive(array, left, right, key):
     Funkce vraci index nalezeneho prvku, pokud prvek v posloupnosti
     neni, vraci -1.
     """
-    return -1
-    # TODO
+
+    current_middle_index = left + ((right - left) // 2)
+    current_middle = array[current_middle_index]
+    if left > right:
+        return -1
+    if current_middle == key:
+        return current_middle_index
+
+    if current_middle < key:
+        return binary_search_recursive(array, current_middle_index + 1, right, key)
+    else:
+        return binary_search_recursive(array, left, current_middle_index - 1, key)
+
 
 
 def binary_search_iterative(array, left, right, key):
