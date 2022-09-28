@@ -73,8 +73,16 @@ def min_max_search_recursive(array, left, right):
     rozdeluj a panuj algoritmu.
     V poli se hleda v rozsahu od indexu 'left' do indexu 'right'.
     """
-    # TODO
-    return -1, -1   # ukazka vraceni usporadane dvojice, aby prosel test 17
+    if left == right:
+        minimum = array[left]
+        maximum = array[left]
+        return minimum, maximum
+
+    middle_index = (right + left) // 2
+    right_min, right_max = min_max_search_recursive(array, middle_index + 1, right)
+    left_min, left_max = min_max_search_recursive(array, left, middle_index)
+
+    return min(right_min, left_min), max(right_max, left_max)
 
 
 def min_max_search_iterative(array, left, right):
