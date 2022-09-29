@@ -93,9 +93,15 @@ def min_max_search_iterative(array, left, right):
     Navodem by vam mohlo byt:
     http://www.codeproject.com/Articles/418776/How-to-replace-recursive-functions-using-stack-and
     """
-    # TODO
-    return -1, -1
+    minimum = array[left]
+    maximum = array[left]
 
+    for i in range(left, right + 1):
+        if array[i] < minimum:
+            minimum = array[i]
+        if array[i] > maximum:
+            maximum = array[i]
+    return minimum, maximum
 
 # Nize nasleduji testy, nemodifikujte je prosim.
 def test_binary_search_recursive():
