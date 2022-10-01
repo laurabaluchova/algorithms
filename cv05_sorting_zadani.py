@@ -42,7 +42,7 @@ def quick_sort_in_place(array, i, j):
 
     while item_from_right_index < item_from_left_index:
 
-        while array[item_from_right_index] < array[j]:
+        while array[item_from_right_index] < array[pivot_index]:
             item_from_right_index += 1
 
         while array[item_from_left_index] > array[j]:
@@ -59,7 +59,7 @@ def quick_sort_in_place(array, i, j):
     quick_sort_in_place(array, new_pivot_index + 1, pivot_index)
 
 
-
+print(quick_sort_in_place([2, 8, 1, 25, 12], 0, 4))
 
 
 # TODO: dopsat tuto funkci
