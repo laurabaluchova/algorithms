@@ -14,18 +14,20 @@
 
 def hamming_distance(binary_string, distance):
     adjusted_strings = []
-    hamming_distance_recursive(binary_string, 0, 0, distance)
+    return hamming_distance_recursive(binary_string, 0, 0, distance, adjusted_strings)
 
 
-def hamming_distance_recursive(binary_string, index, changes, distance):
+def hamming_distance_recursive(binary_string, left, changes, distance, results):
     if changes == distance:
-        print(binary_string)
+        results.append(binary_string)
 
     else:
-        for i in range(index, len(binary_string)):
+        for i in range(left, len(binary_string)):
             binary_string[i] = flip_binary_value(binary_string[i])
-            hamming_distance_recursive(binary_string, index + 1, changes + 1, distance)
+            hamming_distance_recursive(binary_string, i + 1, changes + 1, distance, results)
             binary_string[i] = flip_binary_value(binary_string[i])
+
+    return results
 
 
 def flip_binary_value(value):
@@ -35,4 +37,5 @@ def flip_binary_value(value):
 
 
 tmp = '0001'.split()
-hamming_distance(["0", "0", "1"], 2)
+result = hamming_distance(["0", "0", "0", "1"], 2)
+print(result)
