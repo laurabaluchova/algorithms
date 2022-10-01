@@ -33,16 +33,30 @@ def quick_sort_in_place(array, i, j):
     indexu 'i' a 'j' rekurzivne seradte bez pouziti pomocneho pole.
     Jako pivot se voli posledni prvek zadaneho rozsahu.
     """
-    bigger_item_index = i
-    smaller_item_index = j - 1
+    item_from_right_index = i
+    item_from_left_index = j - 1
+    pivot_index = len(array) - 1
 
-    while array[bigger_item_index] < array[j]:
-        bigger_item_index += 1
-    bigger_item = array[bigger_item_index]
+    if i == j:
+        return array
 
-    while array[smaller_item_index] > array[j]:
-        smaller_item_index -= 1
-    smaller_item = array[smaller_item_index]
+    while item_from_right_index < item_from_left_index:
+
+        while array[item_from_right_index] < array[j]:
+            item_from_right_index += 1
+
+        while array[item_from_left_index] > array[j]:
+            item_from_left_index -= 1
+
+        swap(array, item_from_right_index, item_from_left_index)
+    new_pivot_index = item_from_left_index
+    swap(array, item_from_left_index, pivot_index)
+
+    if new_pivot_index < pivot_index:
+        return array
+
+    quick_sort_in_place(array, i, new_pivot_index - 1)
+    quick_sort_in_place(array, new_pivot_index + 1, pivot_index)
 
 
 
