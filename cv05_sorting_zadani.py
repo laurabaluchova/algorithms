@@ -1,14 +1,4 @@
-#!/usr/bin/python3
 import random
-
-
-###########################
-# Dotaz studenta:
-#
-#
-###########################
-
-# Chcete-li dostat odpoved, vlozte do nazvu souboru heslo KONTROLA.
 
 
 # Vasim ukolem v teto implementacni uloze je naprogramovat zakladni
@@ -43,8 +33,19 @@ def quick_sort_in_place(array, i, j):
     indexu 'i' a 'j' rekurzivne seradte bez pouziti pomocneho pole.
     Jako pivot se voli posledni prvek zadaneho rozsahu.
     """
-    # TODO
-    pass
+    bigger_item_index = i
+    smaller_item_index = j - 1
+
+    while array[bigger_item_index] < array[j]:
+        bigger_item_index += 1
+    bigger_item = array[bigger_item_index]
+
+    while array[smaller_item_index] > array[j]:
+        smaller_item_index -= 1
+    smaller_item = array[smaller_item_index]
+
+
+
 
 
 # TODO: dopsat tuto funkci
