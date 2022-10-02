@@ -33,33 +33,25 @@ def quick_sort_in_place(array, i, j):
     indexu 'i' a 'j' rekurzivne seradte bez pouziti pomocneho pole.
     Jako pivot se voli posledni prvek zadaneho rozsahu.
     """
-    item_from_right_index = i
-    item_from_left_index = j - 1
-    pivot_index = len(array) - 1
+    if i >= j:
+        return
 
-    if i == j:
-        return array
+    index_to_swap = i - 1
+    pivot_index = j
 
-    while item_from_right_index < item_from_left_index:
+    for r in range(i, pivot_index):
+        if array[r] < array[pivot_index]:
+            index_to_swap += 1
+            swap(array, r, index_to_swap)
 
-        while array[item_from_right_index] < array[pivot_index]:
-            item_from_right_index += 1
-
-        while array[item_from_left_index] > array[j]:
-            item_from_left_index -= 1
-
-        swap(array, item_from_right_index, item_from_left_index)
-    new_pivot_index = item_from_left_index
-    swap(array, item_from_left_index, pivot_index)
-
-    if new_pivot_index < pivot_index:
-        return array
+    new_pivot_index = index_to_swap + 1
+    swap(array, new_pivot_index, pivot_index)
 
     quick_sort_in_place(array, i, new_pivot_index - 1)
     quick_sort_in_place(array, new_pivot_index + 1, pivot_index)
 
 
-print(quick_sort_in_place([2, 8, 1, 25, 12], 0, 4))
+print(quick_sort_in_place([23, 2, 5, 14, 2, 23, 4, 12, 29, 25], 0, 9))
 
 
 # TODO: dopsat tuto funkci
@@ -208,6 +200,16 @@ def test_sort(sort):
         print("OK")
     else:
         print("NOK: po volani sortu je vystup: {}".format(array5))
+
+    print("Test 6.: Laurino pekelne pole: ")
+    array6 = [2, 8, 25, 1, 12]
+    print("Puvodni pole: {}".format(array6))
+    sort(array6)
+
+    if is_sorted(array6):
+        print("OK")
+    else:
+        print("NOK: po volani sortu je vystup: {}".format(array6))
 
 
 def test_insert_sort():
