@@ -61,8 +61,21 @@ def merge(array, aux, left, mid, right):
     a od 'mid'+1 po 'right'. K spojeni pouzijte pomocne pole 'aux'.
     Vysledek ulozte v poli 'array'.
     """
-    # TODO
-    pass
+    left_to_compare = left
+    right_to_compare = mid + 1
+
+    while right_to_compare <= right and left_to_compare <= mid:
+
+        if array[left_to_compare] <= array[right_to_compare]:
+            aux.append(array[left_to_compare])
+            left_to_compare += 1
+
+        else:
+            aux.append(array[right_to_compare])
+            right_to_compare += 1
+
+    array = aux
+    return array
 
 
 # TODO: dopsat tuto funkci
