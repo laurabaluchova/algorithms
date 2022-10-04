@@ -64,17 +64,18 @@ def merge(array, aux, left, mid, right):
     left_to_compare = left
     right_to_compare = mid + 1
 
-    while right_to_compare <= right and left_to_compare <= mid:
+    for i in range(len(array)):
+        aux.append(array[i])
 
-        if array[left_to_compare] <= array[right_to_compare]:
-            aux.append(array[left_to_compare])
+    for j in range(len(aux)):
+
+        if aux[left_to_compare] <= aux[right_to_compare] or right_to_compare > right:
+            array[j] = aux[left_to_compare]
             left_to_compare += 1
 
-        else:
-            aux.append(array[right_to_compare])
+        if aux[right_to_compare] < aux[right_to_compare] or left_to_compare > mid:
+            array[j] = aux[right_to_compare]
             right_to_compare += 1
-
-    array = aux
     return array
 
 
