@@ -1,24 +1,9 @@
-#!/usr/bin/python3
-
-
-###########################
-# Dotaz studenta:
-#
-#
-###########################
-
-# Chcete-li dostat odpoved, vlozte do nazvu souboru heslo KONTROLA.
-
-
-# IB002 Extra domaci ukol 5.
-#
 # Ukol 1.
 # Implementujte metodu is_odd, ktera vraci true, pokud je vstup liche cislo,
 # jinak vraci false.
 
 def is_odd(value):
-    pass
-    # TODO
+    return value % 2 != 0
 
 
 # Ukol 2.
