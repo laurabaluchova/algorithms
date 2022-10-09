@@ -97,10 +97,20 @@ def merge_sort(array, aux, left, right):
     """Razeni spojovanim (MergeSort). Seradte zadane pole 'array'
     v intervalu od indexu 'left' po index 'right'.
     Pouzijte pomocnou funkci 'merge' a pomocne pole 'aux'. Vysledek
-    ulozte v poli 'array'.
-    """
-    # TODO
-    pass
+    ulozte v poli 'array'.   """
+
+    if left == right:
+        return
+
+    mid = (left + right) // 2
+    new_left = mid + 1
+    new_right = mid
+
+    merge_sort(array, aux, new_left, right)
+    merge_sort(array, aux, left, new_right)
+
+    merge(array, aux, left, mid, right)
+
 
 
 # TODO: dopsat tuto funkci
