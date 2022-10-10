@@ -24,14 +24,15 @@ def is_odd(value):
 #
 
 def odd_sort_array(arr):
-    if (len(arr) < 3):
-        # Kratky vstup, primo setridime.
-        pass
-        # TODO
+    if len(arr) < 3:
+        if len(arr) > 1 and is_odd(arr[0]) and is_odd(arr[1]):
+            if arr[0] > arr[1]:
+                arr[0], arr[1] = arr[1], arr[0]
+
     else:
         # Vstup moc dlouhy, budeme rozdelovat a panovat.
         # Nove zhruba stejne dlouhe podseznamy pro samostatne setrideni.
-        A = [0] * (len(arr) / 2)
+        A = [0] * (len(arr) // 2)
         B = [0] * (len(arr) - len(A))
         # Rozdeleni: rozkopirovani
         d = 0
@@ -45,8 +46,40 @@ def odd_sort_array(arr):
         odd_sort_array(A)
         odd_sort_array(B)
         # Panovani: Mergovani, tj. kopirovani zpet
-        # TODO
 
+    def odd_merge(array, left, mid, right):
+
+        left_to_compare = left
+        right_to_compare = mid + 1
+        array_index = left
+
+        for i in range(left, right + 1):
+            aux[i] = array[i]
+
+        for j in range(left, right + 1):
+
+           if left_to_compare > mid:
+                array[array_index] = aux[right_to_compare]
+                right_to_compare += 1
+                array_index += 1
+
+            elif right_to_compare > right:
+                array[array_index] = aux[left_to_compare]
+                left_to_compare += 1
+                array_index += 1
+
+            elif aux[right_to_compare] < aux[left_to_compare]:
+                array[array_index] = aux[right_to_compare]
+                right_to_compare += 1
+                array_index += 1
+
+            else:
+                array[array_index] = aux[left_to_compare]
+                left_to_compare += 1
+                array_index += 1
+
+
+print(odd_sort_array([5, 4, 3, 2, 1, 6, 8]))
 
 # Ukol 3.
 # Implementujte metodu sort_array, ktera setridi vstupni sekvenci cisel tak,
