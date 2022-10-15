@@ -79,10 +79,16 @@ def heapify(heap, i):
     Kontrola zacina u prvku na pozici 'i'.
     """
     index_to_control = i
-    if heap.array[index_to_control] < parent(heap, index_to_control):
+
+    if index_to_control > len(heap.array):
+        return heap
+
+    if parent_index(index_to_control) is not None and \
+            heap.array[index_to_control] < parent(heap, index_to_control):
         swap(heap, index_to_control, parent_index(i))
-    heapify(heap, parent_index(index_to_control))
-    return heap
+        heapify(heap, parent_index(index_to_control))
+
+    index_to_control += 1
 
 
 def build_heap(array):
@@ -99,8 +105,11 @@ def decrease_key(heap, i, value):
     """Snizi hodnotu prvku haldy 'heap' na pozici 'i' na hodnotu 'value'
     a opravi vlastnost haldy 'heap'.
     """
-    # TODO
-    pass
+    if heap.array[i] > value:
+        heap.array[i] = value
+        heapify(heap, i)
+    else:
+        return heap
 
 
 def insert(heap, value):
