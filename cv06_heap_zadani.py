@@ -114,24 +114,35 @@ def decrease_key(heap, i, value):
 
 def insert(heap, value):
     """Vlozi hodnotu 'value' do haldy 'heap'."""
-    # TODO
-    pass
+
+    heap.array.append(value)
+    heap.size += 1
+    heapify(heap, heap.size - 1)
+
 
 
 def extract_min(heap):
     """Odstrani minimalni prvek haldy 'heap'. Vraci hodnotu odstraneneho
     prvku. Pokud je halda prazdna, vraci None.
     """
-    # TODO
-    return 0
+    if heap.size == 0:
+        return None
+
+    smallest_number = heap.array[0]
+    heap.array.pop(0)
+    heap.size -= 1
+    heapify(heap, heap.size - 1)
+    return smallest_number
 
 
 def heap_sort(array):
     """Seradi pole 'array' pomoci haldy od nejvetsiho prvku po nejmensi.
     Vraci serazene pole.
     """
-    # TODO
-    return array
+    heap = build_heap(array)
+    print(heap.array)
+    return heap.array
+    pass
 
 
 # Graphviz funkce.
