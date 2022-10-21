@@ -55,8 +55,8 @@ def left(heap, i):
     """
     if left_index(i) >= len(heap.array):
         return None
-    else:
-        return heap.array[left_index(i)]
+
+    return heap.array[left_index(i)]
 
 
 def right(heap, i):
@@ -65,8 +65,8 @@ def right(heap, i):
     """
     if right_index(i) >= len(heap.array):
         return None
-    else:
-        return heap.array[right_index(i)]
+
+    return heap.array[right_index(i)]
 
 
 def swap(heap, i, j):
@@ -77,18 +77,28 @@ def swap(heap, i, j):
 def heapify(heap, i):
     """Opravi haldu 'heap' tak aby splnovala vlastnost minimove haldy.
     Kontrola zacina u prvku na pozici 'i'.
-    """
-    index_to_control = i
 
-    if index_to_control > len(heap.array):
-        return heap
+    smallest = i
+    if left_index(i) < heap.size and left(heap, i) < heap.array[smallest]:
+        smallest = left_index(i)
+    if right_index(i) < heap.size and right(heap, i) < heap.array[smallest]:
+        smallest = right_index(i)
+    if smallest != i:
+        swap(heap, i, smallest)
+        heapify(heap, smallest)"""
 
-    if parent_index(index_to_control) is not None and \
-            heap.array[index_to_control] < parent(heap, index_to_control):
-        swap(heap, index_to_control, parent_index(i))
-        heapify(heap, parent_index(index_to_control))
+    if i < 0:
+        return
 
-    index_to_control += 1
+    if left(heap, i) is not None and left(heap, i) < heap.array[i]:
+        swap(heap, i, left_index(i))
+        heapify(heap, left_index(i))
+
+    if right(heap, i) is not None and right(heap, i) < heap.array[i]:
+        swap(heap, i, right_index(i))
+        heapify(heap, right_index(i))
+
+    heapify(heap, i - 1)
 
 
 def build_heap(array):
@@ -97,8 +107,10 @@ def build_heap(array):
     heap.array = array
     heap.size = len(array)
 
-    heapify(heap, len(array) - 1)
+    for i in range(0, len(heap.array)):
+        heapify(heap, i)
     return heap
+
 
 
 def decrease_key(heap, i, value):
@@ -117,8 +129,7 @@ def insert(heap, value):
 
     heap.array.append(value)
     heap.size += 1
-    heapify(heap, heap.size - 1)
-
+    heapify(heap, 0)
 
 
 def extract_min(heap):
@@ -129,9 +140,10 @@ def extract_min(heap):
         return None
 
     smallest_number = heap.array[0]
-    heap.array.pop(0)
+    heap.array[0] = heap.array[heap.size - 1]
     heap.size -= 1
-    heapify(heap, heap.size - 1)
+    heapify(heap, 0)
+
     return smallest_number
 
 
@@ -229,6 +241,23 @@ def test_build_heap():
         print("Chyba ve vykreslovani, ", end="")
         print("je potreba mit spravne nastavenou heap.size")
 
+def test_build_heap_advanced():
+    print("Test 2b. build_heap pokrocile: ")
+    array = [3, 9, 2, 1, 4, 5]
+
+    heap = build_heap(array)
+
+    if heap.array == [1, 2, 3, 4, 5, 9] and heap.size == 6:
+        print("OK")
+    else:
+        print("NOK")
+
+    try:
+        make_graph(heap, "built.dot")
+        print("Vykreslenou haldu najdete v souboru build.dot")
+    except:
+        print("Chyba ve vykreslovani, ", end="")
+        print("je potreba mit spravne nastavenou heap.size")
 
 def test_insert_heap():
     print("Test 3. insert_heap: "),
@@ -334,6 +363,7 @@ def test_heap_sort():
 if __name__ == '__main__':
     if (test_indexes()):
         test_build_heap()
+        test_build_heap_advanced()
         test_decrease_key()
         test_insert_heap()
         test_extract_min()
