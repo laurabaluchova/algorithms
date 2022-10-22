@@ -87,18 +87,13 @@ def heapify(heap, i):
         swap(heap, i, smallest)
         heapify(heap, smallest)"""
 
-    if i < 0:
-        return
-
-    if left(heap, i) is not None and left(heap, i) < heap.array[i]:
+    if left_index(i) < heap.size and left(heap, i) < heap.array[i]:
         swap(heap, i, left_index(i))
         heapify(heap, left_index(i))
 
-    if right(heap, i) is not None and right(heap, i) < heap.array[i]:
+    if right_index(i) < heap.size and right(heap, i) < heap.array[i]:
         swap(heap, i, right_index(i))
         heapify(heap, right_index(i))
-
-    heapify(heap, i - 1)
 
 
 def build_heap(array):
@@ -107,10 +102,9 @@ def build_heap(array):
     heap.array = array
     heap.size = len(array)
 
-    for i in range(0, len(heap.array)):
+    for i in reversed(range(0, len(heap.array))):
         heapify(heap, i)
     return heap
-
 
 
 def decrease_key(heap, i, value):
@@ -119,7 +113,13 @@ def decrease_key(heap, i, value):
     """
     if heap.array[i] > value:
         heap.array[i] = value
-        heapify(heap, i)
+        find_place_in_branch(heap, i)
+
+
+def find_place_in_branch(heap, i):
+    while parent(heap, i) is not None and parent(heap, i) > heap.array[i]:
+        swap(heap, i, parent_index(i))
+        i = parent_index(i)
 
 
 def insert(heap, value):
@@ -127,7 +127,7 @@ def insert(heap, value):
 
     heap.array.append(value)
     heap.size += 1
-    heapify(heap, 0)
+    find_place_in_branch(heap, heap.size - 1)
 
 
 def extract_min(heap):
@@ -150,9 +150,15 @@ def heap_sort(array):
     Vraci serazene pole.
     """
     heap = build_heap(array)
-    print(heap.array)
-    return heap.array
-    pass
+    last_unsorted_index = heap.size - 1
+
+    while last_unsorted_index >= 0:
+        swap(heap, 0, last_unsorted_index)
+        heap.size -= 1
+        heapify(heap, 0)
+        last_unsorted_index -= 1
+
+    return array
 
 
 # Graphviz funkce.
@@ -320,14 +326,13 @@ def test_decrease_key():
 def test_decrease_key_advanced():
     print("Test 4b. decrease_key: "),
     heap = Min_heap()
-    heap.array = [1, 2, 3, 4, 5, 9]
+    heap.array = [3, 8, 7, 9, 11, 9, 10]
     heap.size = len(heap.array)
-    decrease_key(heap, 4, 2)
+    decrease_key(heap, 4, 1)
 
-    valid_heaps = [[1, 2, 2, 3, 4, 9], [1, 2, 2, 4, 3, 9], [1, 2, 2, 3, 9, 4],
-                   [1, 2, 2, 9, 3, 4], [1, 2, 2, 4, 9, 3], [1, 2, 2, 9, 4, 3]]
+    valid_heaps = [[1, 3, 7, 9, 8, 9, 10]]
 
-    if heap.array not in valid_heaps or heap.size != 6:
+    if heap.array not in valid_heaps or heap.size != 7:
         print("NOK - chyba ve funkci decrease_key")
     else:
         print("OK")

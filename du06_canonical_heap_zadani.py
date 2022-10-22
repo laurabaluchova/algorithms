@@ -1,15 +1,3 @@
-#!/usr/bin/python3
-
-
-###########################
-# Dotaz studenta:
-#
-#
-###########################
-
-# Chcete-li dostat odpoved, vlozte do nazvu souboru heslo KONTROLA.
-
-
 # IB002 Extra domaci ukol 6.
 #
 # Minimova halda je v kanonickem tvaru, pokud pro kazdy jeji prvek se dvema
