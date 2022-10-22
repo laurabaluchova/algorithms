@@ -120,8 +120,6 @@ def decrease_key(heap, i, value):
     if heap.array[i] > value:
         heap.array[i] = value
         heapify(heap, i)
-    else:
-        return heap
 
 
 def insert(heap, value):
@@ -247,7 +245,12 @@ def test_build_heap_advanced():
 
     heap = build_heap(array)
 
-    if heap.array == [1, 2, 3, 4, 5, 9] and heap.size == 6:
+    valid_heaps = [[1, 2, 3, 4, 5, 9], [1, 2, 3, 5, 4, 9], [1, 2, 3, 5, 9, 4],
+                   [1, 2, 3, 9, 5, 4], [1, 2, 3, 9, 4, 5], [1, 2, 3, 4, 9, 5],
+                   [1, 3, 2, 4, 5, 9], [1, 3, 2, 5, 4, 9], [1, 3, 2, 5, 9, 4],
+                   [1, 3, 2, 9, 5, 4], [1, 3, 2, 4, 9, 5], [1, 3, 2, 9, 4, 5]]
+
+    if heap.array in valid_heaps and heap.size == 6:
         print("OK")
     else:
         print("NOK")
@@ -314,6 +317,28 @@ def test_decrease_key():
         print("je potreba mit spravne nastavenou heap.size")
 
 
+def test_decrease_key_advanced():
+    print("Test 4b. decrease_key: "),
+    heap = Min_heap()
+    heap.array = [1, 2, 3, 4, 5, 9]
+    heap.size = len(heap.array)
+    decrease_key(heap, 4, 2)
+
+    valid_heaps = [[1, 2, 2, 3, 4, 9], [1, 2, 2, 4, 3, 9], [1, 2, 2, 3, 9, 4],
+                   [1, 2, 2, 9, 3, 4], [1, 2, 2, 4, 9, 3], [1, 2, 2, 9, 4, 3]]
+
+    if heap.array not in valid_heaps or heap.size != 6:
+        print("NOK - chyba ve funkci decrease_key")
+    else:
+        print("OK")
+    try:
+        make_graph(heap, "decrease.dot")
+        print("Vykreslenou haldu najdete v souboru decrease.dot")
+    except:
+        print("Chyba ve vykreslovani, ", end="")
+        print("je potreba mit spravne nastavenou heap.size")
+
+
 def test_extract_min():
     print("Test 5. extract_min: "),
     heap = Min_heap()
@@ -365,6 +390,7 @@ if __name__ == '__main__':
         test_build_heap()
         test_build_heap_advanced()
         test_decrease_key()
+        test_decrease_key_advanced()
         test_insert_heap()
         test_extract_min()
         test_heap_sort()
