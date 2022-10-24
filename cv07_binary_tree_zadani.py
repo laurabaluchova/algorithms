@@ -17,7 +17,7 @@ class Node:
         self.left = None
 
 
-class Binary_search_tree:
+class BinarySearchTree:
     """Trida Binary_search_tree slouzi k reprezentaci binarniho vyhledavaciho
     stromu.
 
@@ -38,8 +38,24 @@ def search(tree, key):
     """Vyhleda uzel s klicem 'key' ve strome 'tree'. Vrati uzel s hledanym
     klicem. Pokud se klic 'key' ve strome nenachazi, vraci None.
     """
-    pass
-    # TODO
+    return search_recursive(key, tree.root)
+
+
+def search_recursive(key, node):
+    if node.key == key:
+        return node
+
+    if is_leaf(node):
+        return None
+
+    if node.key > key:
+        return search_recursive(key, node.left)
+
+    return search_recursive(key, node.right)
+
+
+def is_leaf(node):
+    return node.left is None and node.right is None
 
 
 def delete(tree, node):
@@ -105,7 +121,7 @@ def make_graph(tree, fileName):
 
 def test_insert():
     print("Test 1. insert: ", end='')
-    tree = Binary_search_tree()
+    tree = BinarySearchTree()
 
     insert(tree, 3)
 
@@ -139,7 +155,7 @@ def test_insert():
 
 
 def init_test_tree():
-    tree = Binary_search_tree()
+    tree = BinarySearchTree()
 
     nodes = [Node() for _ in range(7)]
     for i in range(7):
