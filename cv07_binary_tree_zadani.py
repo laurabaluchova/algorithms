@@ -30,8 +30,40 @@ class BinarySearchTree:
 
 def insert(tree, key):
     """Vlozi novy uzel s klicem 'key' do stromu 'tree'."""
-    pass
-    # TODO
+    if tree.root is None:
+        tree.root = Node()
+        tree.root.key = key
+        return
+
+    insert_recursive(key, tree.root)
+
+
+def insert_recursive(key, node):
+    if node.key < key and node.right is None:
+        node.right = key
+        return
+
+    if node.key > key and node.left is None:
+        node.left = key
+        return
+
+    if node.key < key < node.right:
+        original_right_son = node.right
+        node.right = key
+        node.right.right = original_right_son
+        return
+
+    if node.key > key > node.left:
+        original_left_son = node.left
+        node.left = key
+        node.left.left = original_left_son
+        return
+
+    if node.key < key:
+        return insert_recursive(key, node.right)
+
+    return insert_recursive(key, node.left)
+
 
 
 def search(tree, key):
