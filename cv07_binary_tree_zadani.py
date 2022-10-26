@@ -40,30 +40,19 @@ def insert(tree, key):
 
 def insert_recursive(key, node):
     if node.key < key and node.right is None:
-        node.right = key
+        node.right = Node()
+        node.right.key = key
         return
 
     if node.key > key and node.left is None:
-        node.left = key
-        return
-
-    if node.key < key < node.right:
-        original_right_son = node.right
-        node.right = key
-        node.right.right = original_right_son
-        return
-
-    if node.key > key > node.left:
-        original_left_son = node.left
-        node.left = key
-        node.left.left = original_left_son
+        node.left = Node()
+        node.left.key = key
         return
 
     if node.key < key:
         return insert_recursive(key, node.right)
 
     return insert_recursive(key, node.left)
-
 
 
 def search(tree, key):
@@ -100,8 +89,20 @@ def delete(tree, node):
 
 def height(tree):
     """Vraci vysku stromu 'tree'."""
-    pass
-    # TODO
+    if tree.root is None:
+        return 0
+
+    return height_recursive(tree, tree.root)
+
+
+def height_recursive(tree, current_node):
+    if current_node is None:
+        return 0
+
+    left_height = height_recursive(tree, current_node.left) + 1
+    right_height = height_recursive(tree, current_node.right) + 1
+
+    return max(left_height, right_height)
 
 
 def is_correct_bst(tree):
