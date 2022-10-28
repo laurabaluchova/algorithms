@@ -85,8 +85,19 @@ def delete(tree, node):
     """Smaze uzel 'node' ze stromu 'tree' a obnovi vlastnost vyhledavaciho
     stromu.
     """
-    pass
-    # TODO
+    if is_leaf(node):
+        node.parent = None
+
+    if node.right is None:
+        node.parent = node.left.parent
+
+    if node.left is None:
+        node.parent = node.right.parent
+
+
+def delete_both_sons_recursive(node):
+    if node.left is None:
+        
 
 
 def height(tree):
