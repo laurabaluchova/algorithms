@@ -86,18 +86,63 @@ def delete(tree, node):
     stromu.
     """
     if is_leaf(node):
+        if node.key < node.parent.key:
+            node.parent.left = None
+        else:
+            node.parent.right = None
         node.parent = None
+        return
 
     if node.right is None:
-        node.parent = node.left.parent
+        node.parent.right = node.left
+        node.left.parent = node.parent
+        node.parent = None
+        node.left = None
+        return
 
     if node.left is None:
-        node.parent = node.right.parent
+        node.parent.left = node.right
+        node.right.parent = node.parent
+        node.parent = None
+        node.right = None
+        return
+
+    if node.key >= tree.root.key:
+        delete_recursive_right(tree, node.right, node)
+    else:
+        delete_recursive_left(tree, node.left, node)
 
 
-def delete_both_sons_recursive(node):
-    if node.left is None:
-        
+def delete_recursive_right(tree, current_node, node_to_delete):
+    if current_node.left is None:
+        if node_to_delete.parent is None:
+            tree.root = current_node
+        current_node.parent.left = None
+        current_node.parent = node_to_delete.parent
+        current_node.left = node_to_delete.left
+        current_node.right = node_to_delete.right
+
+        current_node.left.parent = current_node
+        current_node.right.parent = current_node
+        return
+
+    delete_recursive_right(tree, current_node.left, node_to_delete)
+
+
+def delete_recursive_left(tree, current_node, node_to_delete):
+    if current_node.right is None:
+        if node_to_delete.parent is None:
+            tree.root = current_node
+        current_node.parent.right = None
+        current_node.parent = node_to_delete.parent
+        current_node.left = node_to_delete.left
+        current_node.right = node_to_delete.right
+
+        current_node.left.parent = current_node
+        current_node.right.parent = current_node
+        return
+
+    delete_recursive_left(tree, current_node.right, node_to_delete)
 
 
 def height(tree):
