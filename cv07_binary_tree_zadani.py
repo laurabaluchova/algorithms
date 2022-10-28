@@ -10,6 +10,7 @@ class Node:
         left    reference na leveho potomka (None, pokud neexistuje)
         right   reference na praveho potomka (None, pokud neexistuje)
     """
+
     def __init__(self):
         self.key = 0
         self.parent = None
@@ -24,6 +25,7 @@ class BinarySearchTree:
     Atributy:
         root    reference na korenovy uzel typu Node
     """
+
     def __init__(self):
         self.root = None
 
@@ -90,7 +92,6 @@ def delete(tree, node):
 def height(tree):
     """Vraci vysku stromu 'tree'."""
 
-
     return height_recursive(tree, tree.root)
 
 
@@ -107,26 +108,24 @@ def height_recursive(tree, current_node):
 def is_correct_bst(tree):
     """Overi, zdali je strom 'tree' korektni binarni vyhledavaci strom.
     Pokud ano, vraci True, jinak False."""
-    
+
     if tree.root is None:
         return False
     """print(is_correct_bst_recursive(tree, tree.root))"""
-    return is_correct_bst_recursive(tree, tree.root)
-
-def is_node_correct(node):
-    return (node.right is None or node.right.key >= node.key) and (node.left is None or node.left.key <= node.key)
+    return is_correct_bst_recursive(tree.root, -sys.maxsize, sys.maxsize)
 
 
-def is_correct_bst_recursive(tree, node):
-    if not is_node_correct(node):
+def is_correct_bst_recursive(node, min_value, max_value):
+    if node is None:
+        return True
+
+    if node.key < min_value or node.key > max_value:
         return False
 
-    if node.right is not None:
-        return is_correct_bst_recursive(tree, node.right)
-    if node.left is not None:
-        return is_correct_bst_recursive(tree, node.left)
+    is_left_correct = is_correct_bst_recursive(node.left, min_value, node.key)
+    is_right_correct = is_correct_bst_recursive(node.right, node.key, max_value)
 
-    return True
+    return is_left_correct and is_right_correct
 
 
 # Dodatek k graphvizu:
