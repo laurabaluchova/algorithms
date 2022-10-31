@@ -117,36 +117,43 @@ def buildSumTree(array):
     :return: souctovy strom (typu SumTree) vybudovany nad seznamom array
     """
     my_tree = SumTree()
+    node_array = []
 
-    if len(array) == 0 or len(array) == 1:
+    if len(array) == 0:
         return my_tree
 
-    return buildSumTreeResursive(my_tree, array, 0, len(array) - 1)
+    if len(array) == 1:
+        new_node = Node()
+        new_node.key = array[0]
+        my_tree.root = new_node
+        return my_tree
+
+    for i in range(0, len(array)):
+        new_node = Node()
+        new_node.key = array[i]
+        node_array.append(new_node)
+
+    buildSumTreeResursive(my_tree, node_array)
+    return my_tree
 
 
-def buildSumTreeResursive(tree, array, first_index, last_index):
-    second_index = first_index + 1
-    first_node = Node()
-    first_node.key = array[first_index]
+def buildSumTreeResursive(tree, node_array):
+    sum_array = []
 
-    second_node = Node()
-    second_node.key = array[second_index]
+    for i in range(0, len(node_array), 2):
+        new_node_key = node_array[i].key + node_array[i + 1].key
+        new_node = Node()
+        new_node.key = new_node_key
+        new_node.left = node_array[i]
+        new_node.right = node_array[i + 1]
+        node_array[i].parent = new_node
+        node_array[i + 1].parent = new_node
+        if len(node_array) == 2:
+            tree.root = new_node
+            return
+        sum_array.append(new_node)
 
-    parent_key = first_node.key + second_node.key
-
-    parent_node = Node()
-    parent_node.key = parent_key
-
-    first_node.parent = parent_node
-    second_node.parent = parent_node
-
-    if parent_key == array_sum(array):
-        tree.root = parent_node
-
-    buildSumTreeResursive(tree, array, first_index + 2, (first_index + second_index) // 2)
-    buildSumTreeResursive(tree, array, ((first_index + second_index) // 2) + 1, second_index)
-
-    return tree
+    buildSumTreeResursive(tree, sum_array)
 
 
 
