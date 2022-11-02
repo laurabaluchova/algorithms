@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="finished pink_blue tree">
+      <change afterPath="$PROJECT_DIR$/reverse_list/reverseList_zadani.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="cv07_binary_search_tree" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2Ea8V7Z3h42TB1f74RVmiQdQWLT" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Projekty/Python/algorithms/reverse_list&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projekty\Python\algorithms\reverse_list" />
+      <recent name="E:\Projekty\Python\algorithms\pink_blue_tree" />
+      <recent name="E:\Projekty\Python\algorithms\linked_tree" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Projekty\Python\algorithms\sum_tree" />
+      <recent name="E:\Projekty\Python\algorithms" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.reverseList_zadani">
+    <configuration name="cv07_binary_tree_zadani" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="algorithms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cv07_binary_tree_zadani.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="linked_tree_zadani" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="algorithms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/linked_tree" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/linked_tree/linked_tree_zadani.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="reverseList_zadani" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="algorithms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/reverse_list" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/reverse_list/reverseList_zadani.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ruzovo-modre-stromy-zadanie" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="algorithms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pink_blue_tree" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pink_blue_tree/ruzovo-modre-stromy-zadanie.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="sumTree_zadanie" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="algorithms" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/sum_tree" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/sum_tree/sumTree_zadanie.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.reverseList_zadani" />
+        <item itemvalue="Python.ruzovo-modre-stromy-zadanie" />
+        <item itemvalue="Python.sumTree_zadanie" />
+        <item itemvalue="Python.linked_tree_zadani" />
+        <item itemvalue="Python.cv07_binary_tree_zadani" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="" />
+      <created>1662822355207</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662822355207</updated>
+    </task>
+    <task id="LOCAL-00001" summary="finished search and insert for linkedlist">
+      <created>1662829745247</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1662829745247</updated>
+    </task>
+    <task id="LOCAL-00002" summary="finished linked list">
+      <created>1662919116421</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662919116421</updated>
+    </task>
+    <task id="LOCAL-00003" summary="finished queue">
+      <created>1662922076935</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662922076935</updated>
+    </task>
+    <task id="LOCAL-00004" summary="finished stack">
+      <created>1663006459246</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663006459246</updated>
+    </task>
+    <task id="LOCAL-00005" summary="strangelist structure defined">
+      <created>1663007125533</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663007125533</updated>
+    </task>
+    <task id="LOCAL-00006" summary="strangelist first, last and prev defined">
+      <created>1663096187339</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663096187339</updated>
+    </task>
+    <task id="LOCAL-00007" summary="strangelist first, last and prev defined">
+      <created>1663096196571</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1663096196571</updated>
+    </task>
+    <task id="LOCAL-00008" summary="list to strangelist completed">
+      <created>1663268196230</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1663268196230</updated>
+    </task>
+    <task id="LOCAL-00009" summary="strangelist finished">
+      <created>1663506992988</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1663506992988</updated>
+    </task>
+    <task id="LOCAL-00010" summary="finished circular list is_circular a get_length">
+      <created>1663615346877</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1663615346877</updated>
+    </task>
+    <task id="LOCAL-00011" summary="finished circular list">
+      <created>1663700907741</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1663700907741</updated>
+    </task>
+    <task id="LOCAL-00012" summary="finished recursion: fibonacci and power">
+      <created>1663964280674</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1663964280674</updated>
+    </task>
+    <task id="LOCAL-00013" summary="finished du03">
+      <created>1664119900905</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1664119900905</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added task files">
+      <created>1664122367145</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1664122367145</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Added task files">
+      <created>1664122408036</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1664122408036</updated>
+    </task>
+    <task id="LOCAL-00016" summary="binary_search_recursive finished">
+      <created>1664217259160</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1664217259160</updated>
+    </task>
+    <task id="LOCAL-00017" summary="min_max_search_recursive finished">
+      <created>1664381482322</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1664381482322</updated>
+    </task>
+    <task id="LOCAL-00018" summary="started hamming_distance">
+      <created>1664480079394</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1664480079394</updated>
+    </task>
+    <task id="LOCAL-00019" summary="started hamming_distance">
+      <created>1664570213572</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1664570213572</updated>
+    </task>
+    <task id="LOCAL-00020" summary="finished hamming_distance">
+      <created>1664627617480</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1664627617480</updated>
+    </task>
+    <task id="LOCAL-00021" summary="finished hamming_distance">
+      <created>1664627626985</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1664627626985</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Started working on quicksort">
+      <created>1664634763421</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1664634763421</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Started working on quicksort">
+      <created>1664642526388</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1664642526388</updated>
+    </task>
+    <task id="LOCAL-00024" summary="finished quicksort">
+      <created>1664738925194</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1664738925194</updated>
+    </task>
+    <task id="LOCAL-00025" summary="started merge sort">
+      <created>1664827246185</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1664827246185</updated>
+    </task>
+    <task id="LOCAL-00026" summary="started merge sort">
+      <created>1664911761574</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1664911761574</updated>
+    </task>
+    <task id="LOCAL-00027" summary="finished merge for merge sort">
+      <created>1664994314549</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1664994314549</updated>
+    </task>
+    <task id="LOCAL-00028" summary="finished merge sort">
+      <created>1665341736487</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1665341736487</updated>
+    </task>
+    <task id="LOCAL-00029" summary="finished merge sort">
+      <created>1665341741797</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1665341741797</updated>
+    </task>
+    <task id="LOCAL-00030" summary="started du 05: odd_sort_array">
+      <created>1665423476541</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1665423476541</updated>
+    </task>
+    <task id="LOCAL-00031" summary="started build_heap">
+      <created>1665775755885</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1665775755885</updated>
+    </task>
+    <task id="LOCAL-00032" summary="finished build_heap and decrease_key">
+      <created>1665823943754</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1665823943754</updated>
+    </task>
+    <task id="LOCAL-00033" summary="started extract_min">
+      <created>1665941457572</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1665941457573</updated>
+    </task>
+    <task id="LOCAL-00034" summary="started build_heap">
+      <created>1666380175112</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1666380175112</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Updated tests">
+      <created>1666456656874</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1666456656874</updated>
+    </task>
+    <task id="LOCAL-00036" summary="finished du06">
+      <created>1666545272056</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1666545272056</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Added cv07 files">
+      <created>1666546389972</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1666546389972</updated>
+    </task>
+    <task id="LOCAL-00038" summary="finished search">
+      <created>1666637069277</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1666637069277</updated>
+    </task>
+    <task id="LOCAL-00039" summary="finished insert and height">
+      <created>1666812619104</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1666812619104</updated>
+    </task>
+    <task id="LOCAL-00040" summary="started correctness of BST">
+      <created>1666901109058</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1666901109058</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Finished BST correctness">
+      <created>1666978777986</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1666978777986</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Finished binary search trees cv 07">
+      <created>1666986998841</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1666986998841</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Finished linked_tree">
+      <created>1667051159084</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1667051159085</updated>
+    </task>
+    <task id="LOCAL-00044" summary="started sum_tree">
+      <created>1667149097579</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1667149097579</updated>
+    </task>
+    <task id="LOCAL-00045" summary="finished sum_tree">
+      <created>1667244523143</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1667244523143</updated>
+    </task>
+    <task id="LOCAL-00046" summary="finished pink_blue tree">
+      <created>1667330506057</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1667330506057</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="binary_search_recursive finished" />
+    <MESSAGE value="min_max_search_recursive finished" />
+    <MESSAGE value="started hamming_distance" />
+    <MESSAGE value="finished hamming_distance" />
+    <MESSAGE value="Started working on quicksort" />
+    <MESSAGE value="finished quicksort" />
+    <MESSAGE value="started merge sort" />
+    <MESSAGE value="finished merge for merge sort" />
+    <MESSAGE value="finished merge sort" />
+    <MESSAGE value="started du 05: odd_sort_array" />
+    <MESSAGE value="finished build_heap and decrease_key" />
+    <MESSAGE value="started extract_min" />
+    <MESSAGE value="started build_heap" />
+    <MESSAGE value="Updated tests" />
+    <MESSAGE value="finished du06" />
+    <MESSAGE value="Added cv07 files" />
+    <MESSAGE value="finished search" />
+    <MESSAGE value="finished insert and height" />
+    <MESSAGE value="started correctness of BST" />
+    <MESSAGE value="Finished BST correctness" />
+    <MESSAGE value="Finished binary search trees cv 07" />
+    <MESSAGE value="Finished linked_tree" />
+    <MESSAGE value="started sum_tree" />
+    <MESSAGE value="finished sum_tree" />
+    <MESSAGE value="finished pink_blue tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished pink_blue tree" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="tree.root.left" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
