@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="finished pink_blue tree">
-      <change afterPath="$PROJECT_DIR$/reverse_list/reverseList_zadani.py" afterDir="false" />
+    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="finished reverse_list">
+      <change afterPath="$PROJECT_DIR$/tree_set/TreeSet_zadani.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +30,13 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Projekty/Python/algorithms/reverse_list&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Projekty/Python/algorithms/tree_set&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projekty\Python\algorithms\tree_set" />
       <recent name="E:\Projekty\Python\algorithms\reverse_list" />
       <recent name="E:\Projekty\Python\algorithms\pink_blue_tree" />
       <recent name="E:\Projekty\Python\algorithms\linked_tree" />
@@ -44,8 +46,8 @@
       <recent name="E:\Projekty\Python\algorithms" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.reverseList_zadani">
-    <configuration name="cv07_binary_tree_zadani" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.TreeSet_zadani">
+    <configuration name="TreeSet_zadani" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="algorithms" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -53,11 +55,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tree_set" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cv07_binary_tree_zadani.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tree_set/TreeSet_zadani.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -152,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.TreeSet_zadani" />
         <item itemvalue="Python.reverseList_zadani" />
         <item itemvalue="Python.ruzovo-modre-stromy-zadanie" />
         <item itemvalue="Python.sumTree_zadanie" />
         <item itemvalue="Python.linked_tree_zadani" />
-        <item itemvalue="Python.cv07_binary_tree_zadani" />
       </list>
     </recent_temporary>
   </component>
@@ -491,7 +493,21 @@
       <option name="project" value="LOCAL" />
       <updated>1667330506057</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="finished reverse_list">
+      <created>1667417118299</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1667417118299</updated>
+    </task>
+    <task id="LOCAL-00048" summary="finished reverse_list">
+      <created>1667417131291</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1667417131291</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -506,7 +522,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="binary_search_recursive finished" />
     <MESSAGE value="min_max_search_recursive finished" />
     <MESSAGE value="started hamming_distance" />
     <MESSAGE value="finished hamming_distance" />
@@ -531,7 +546,8 @@
     <MESSAGE value="started sum_tree" />
     <MESSAGE value="finished sum_tree" />
     <MESSAGE value="finished pink_blue tree" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished pink_blue tree" />
+    <MESSAGE value="finished reverse_list" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished reverse_list" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
