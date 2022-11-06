@@ -88,11 +88,6 @@ def is_correct_GB_tree_recursive(tree, node, distance_from_root):
     return is_left_correct and is_right_correct
 
 
-def is_leaf(node):
-    return node.left is None and node.right is None
-
-
-
 # Ukol 2. (10 bodu)
 # Implementujte funkci insert_to_GB_tree(tree, key), ktera prida uzel do
 # korektniho zelenomodreho stromu se zadanou hodnotou klice. Do stromu se novy
@@ -114,6 +109,7 @@ def insert_to_GB_tree(tree, key):
         tree.root.key = key
         tree.root.color = Colors.green
         return
+
     insert_to_GB_tree_recursive(tree, key, tree.root, 0)
 
 
@@ -124,7 +120,7 @@ def insert_to_GB_tree_recursive(tree, key, node, node_depth):
     if node.key < key and node.right is None:
         node.right = GBNode()
         node.right.key = key
-        if is_node_green(tree, node_depth):
+        if should_node_be_green(tree.g_dist, node_depth + 1):
             node.right.color = Colors.green
         else:
             node.right.color = Colors.blue
@@ -133,22 +129,20 @@ def insert_to_GB_tree_recursive(tree, key, node, node_depth):
     if node.key > key and node.left is None:
         node.left = GBNode()
         node.left.key = key
-        if is_node_green(tree, node_depth):
+        if should_node_be_green(tree.g_dist, node_depth + 1):
             node.left.color = Colors.green
         else:
             node.left.color = Colors.blue
         return
 
     if node.key < key:
-        return insert_to_GB_tree_recursive(tree, key, node.right, node_depth + 1)
-
-    return insert_to_GB_tree_recursive(tree, key, node.left, node_depth + 1)
-
-
-def is_node_green(tree, node_depth):
-    return (node_depth + 1) % tree.g_dist == 0
+        insert_to_GB_tree_recursive(tree, key, node.right, node_depth + 1)
+    else:
+        insert_to_GB_tree_recursive(tree, key, node.left, node_depth + 1)
 
 
+def should_node_be_green(g_dist, node_depth):
+    return node_depth % g_dist == 0
 
 
 # Ukol 3. (15 bodu)
@@ -196,9 +190,6 @@ def set_green_children_recursive(tree, node, parent_node):
     set_green_children_recursive(tree, node.right, parent_node)
 
 
-
-
-
 # Ukol 4. (15 bodu)
 # Implementujte funkci join_two_GB_trees(minus_tree, plus_tree), ktera umi
 # spojit dva zadane GBTree, pricemz predpokladejte, ze 'minus_tree' obsahuje
@@ -210,7 +201,49 @@ def set_green_children_recursive(tree, node, parent_node):
 # kopii stromu). Napriklad muzete jeden ze stromu "zavesit" do druheho.
 # Pozorne si proctete pozadavek na casovou slozitost.
 
+
 def join_two_GB_trees(minus_tree, plus_tree):
+    if minus_tree.root is None and plus_tree.root is None:
+        tree = GBTree()
+        tree.g_dist = plus_tree.g_dist
+        return tree
+
+    if minus_tree.root is None:
+        return plus_tree
+
+    if plus_tree.root is None and plus_tree.g_dist is not None:
+        minus_tree.g_dist = plus_tree.g_dist
+        change_colors_recursive(minus_tree, minus_tree.root, 0)
+        return minus_tree
+
+    node_to_insert = minus_tree.root
+    connected_tree, node_depth = insert_existing_node_recursive(plus_tree, node_to_insert, plus_tree.root, 0)
+    change_colors_recursive(connected_tree, node_to_insert, node_depth + 1)
+    return connected_tree
+
+
+def insert_existing_node_recursive(tree, node_to_insert, node, node_depth):
+    if node.left is None:
+        node.left = node_to_insert
+        return tree, node_depth
+
+    return insert_existing_node_recursive(tree, node_to_insert, node.left, node_depth + 1)
+
+
+def change_colors_recursive(tree, node, node_depth):
+    if node is None:
+        return
+
+    if should_node_be_green(tree.g_dist, node_depth):
+        node.color = Colors.green
+    else:
+        node.color = Colors.blue
+
+    change_colors_recursive(tree, node.left, node_depth + 1)
+    change_colors_recursive(tree, node.right, node_depth + 1)
+
+
+
     """
     vstup: 'minus_tree' korektni zelenomodry strom, se zapornymi klici
            'plus_tree'  korektni zelenomodry strom, s kladnymi klici
@@ -220,7 +253,10 @@ def join_two_GB_trees(minus_tree, plus_tree):
     casova slozitost: O(n1 + h2), kde 'n1' je pocet vrcholu stromu
             'minus_tree' a 'h2' je delka nejdelsi cesty stromu 'plus_tree'
     """
-    pass
+
+
+"""def join_two_gb_trees_recursive(plus_tree, minus_tree, node):"""
+
 
 
 """
