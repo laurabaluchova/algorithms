@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="finished find_minimal_root">
-      <change afterPath="$PROJECT_DIR$/green_blue_tree/04_termin_zadani.py" afterDir="false" />
+    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="finished set_green_children">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/green_blue_tree/04_termin_zadani.py" beforeDir="false" afterPath="$PROJECT_DIR$/green_blue_tree/04_termin_zadani.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,13 +171,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662822355207</updated>
-    </task>
-    <task id="LOCAL-00001" summary="finished search and insert for linkedlist">
-      <created>1662829745247</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1662829745247</updated>
     </task>
     <task id="LOCAL-00002" summary="finished linked list">
       <created>1662919116421</created>
@@ -515,7 +508,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667587000865</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="finished set_green_children">
+      <created>1667722375730</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1667722375730</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -530,7 +530,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started hamming_distance" />
     <MESSAGE value="finished hamming_distance" />
     <MESSAGE value="Started working on quicksort" />
     <MESSAGE value="finished quicksort" />
@@ -555,7 +554,8 @@
     <MESSAGE value="finished pink_blue tree" />
     <MESSAGE value="finished reverse_list" />
     <MESSAGE value="finished find_minimal_root" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished find_minimal_root" />
+    <MESSAGE value="finished set_green_children" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished set_green_children" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -567,7 +567,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/green_blue_tree/04_termin_zadani.py</url>
-          <line>631</line>
+          <line>618</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>

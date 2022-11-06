@@ -101,7 +101,6 @@ def is_leaf(node):
 # aby i vysledny strom splnoval vlastnosti zelenomodreho stromu (obarveni i
 # vyhledavaci vlastnost).
 
-
 def insert_to_GB_tree(tree, key):
     """
     vstup: 'tree' korektni zelenomodry strom, do ktereho se ma vlozit novy uzel
@@ -109,8 +108,48 @@ def insert_to_GB_tree(tree, key):
     vystup: nic, upravujeme primo vstupni strom
     casova slozitost: O(h), kde 'h' je delka nejdelsi vetve od korene k listu
     """
-    pass
-        
+
+    if tree.root is None:
+        tree.root = GBNode()
+        tree.root.key = key
+        tree.root.color = Colors.green
+        return
+    insert_to_GB_tree_recursive(tree, key, tree.root, 0)
+
+
+def insert_to_GB_tree_recursive(tree, key, node, node_depth):
+    if node.key == key:
+        return
+
+    if node.key < key and node.right is None:
+        node.right = GBNode()
+        node.right.key = key
+        if is_node_green(tree, node_depth):
+            node.right.color = Colors.green
+        else:
+            node.right.color = Colors.blue
+        return
+
+    if node.key > key and node.left is None:
+        node.left = GBNode()
+        node.left.key = key
+        if is_node_green(tree, node_depth):
+            node.left.color = Colors.green
+        else:
+            node.left.color = Colors.blue
+        return
+
+    if node.key < key:
+        return insert_to_GB_tree_recursive(tree, key, node.right, node_depth + 1)
+
+    return insert_to_GB_tree_recursive(tree, key, node.left, node_depth + 1)
+
+
+def is_node_green(tree, node_depth):
+    return (node_depth + 1) % tree.g_dist == 0
+
+
+
 
 # Ukol 3. (15 bodu)
 # Implementujte funkci set_green_children(tree), ktera v zadanem korektnim
