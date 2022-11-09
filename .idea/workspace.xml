@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="finished GB_tree plus minus">
-      <change afterPath="$PROJECT_DIR$/weird_bst/weirdBST-zadani.py" afterDir="false" />
+    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="Added new exam files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pretty_tree/duspec_zadani.py" beforeDir="false" afterPath="$PROJECT_DIR$/pretty_tree/duspec_zadani.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,24 +30,24 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Projekty/Python/algorithms/weird_bst&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Projekty/Python/algorithms/trie/trie.py&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Projekty\Python\algorithms\trie" />
+      <recent name="E:\Projekty\Python\algorithms\md_tree" />
+      <recent name="E:\Projekty\Python\algorithms\pretty_tree" />
       <recent name="E:\Projekty\Python\algorithms\weird_bst" />
       <recent name="E:\Projekty\Python\algorithms\green_blue_tree" />
-      <recent name="E:\Projekty\Python\algorithms\tree_set" />
-      <recent name="E:\Projekty\Python\algorithms\reverse_list" />
-      <recent name="E:\Projekty\Python\algorithms\pink_blue_tree" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\Projekty\Python\algorithms\sum_tree" />
       <recent name="E:\Projekty\Python\algorithms" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.weirdBST-zadani">
+  <component name="RunManager" selected="Python.duspec_zadani">
     <configuration name="04_termin_zadani" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="algorithms" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -90,7 +90,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="reverseList_zadani" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="duspec_zadani" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="algorithms" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -98,11 +98,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/reverse_list" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pretty_tree" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/reverse_list/reverseList_zadani.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pretty_tree/duspec_zadani.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -111,7 +111,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ruzovo-modre-stromy-zadanie" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="md_tree_zadanie" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="algorithms" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -119,11 +119,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pink_blue_tree" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/md_tree" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pink_blue_tree/ruzovo-modre-stromy-zadanie.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/md_tree/md_tree_zadanie.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -132,7 +132,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="weirdBST-zadani" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="trie" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="algorithms" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -140,11 +140,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/weird_bst" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/trie" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/weird_bst/weirdBST-zadani.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trie/trie.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,13 +153,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.04_termin_zadani" />
+      <item itemvalue="Python.trie" />
+      <item itemvalue="Python.md_tree_zadanie" />
+      <item itemvalue="Python.TreeSet_zadani" />
+      <item itemvalue="Python.duspec_zadani" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.weirdBST-zadani" />
+        <item itemvalue="Python.duspec_zadani" />
+        <item itemvalue="Python.trie" />
         <item itemvalue="Python.04_termin_zadani" />
         <item itemvalue="Python.TreeSet_zadani" />
-        <item itemvalue="Python.reverseList_zadani" />
-        <item itemvalue="Python.ruzovo-modre-stromy-zadanie" />
+        <item itemvalue="Python.md_tree_zadanie" />
       </list>
     </recent_temporary>
   </component>
@@ -171,27 +178,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662822355207</updated>
-    </task>
-    <task id="LOCAL-00004" summary="finished stack">
-      <created>1663006459246</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1663006459246</updated>
-    </task>
-    <task id="LOCAL-00005" summary="strangelist structure defined">
-      <created>1663007125533</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1663007125533</updated>
-    </task>
-    <task id="LOCAL-00006" summary="strangelist first, last and prev defined">
-      <created>1663096187339</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1663096187339</updated>
     </task>
     <task id="LOCAL-00007" summary="strangelist first, last and prev defined">
       <created>1663096196571</created>
@@ -515,7 +501,28 @@
       <option name="project" value="LOCAL" />
       <updated>1667747256936</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="finished weird BST">
+      <created>1667765778284</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1667765778284</updated>
+    </task>
+    <task id="LOCAL-00054" summary="Neštastnikos">
+      <created>1667855566522</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1667855566523</updated>
+    </task>
+    <task id="LOCAL-00055" summary="Added new exam files">
+      <created>1667940605285</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1667940605287</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -530,9 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finished quicksort" />
-    <MESSAGE value="started merge sort" />
-    <MESSAGE value="finished merge for merge sort" />
     <MESSAGE value="finished merge sort" />
     <MESSAGE value="started du 05: odd_sort_array" />
     <MESSAGE value="finished build_heap and decrease_key" />
@@ -555,7 +559,10 @@
     <MESSAGE value="finished set_green_children" />
     <MESSAGE value="finished GB_tree insert" />
     <MESSAGE value="finished GB_tree plus minus" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished GB_tree plus minus" />
+    <MESSAGE value="finished weird BST" />
+    <MESSAGE value="Neštastnikos" />
+    <MESSAGE value="Added new exam files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new exam files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -572,8 +579,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/weird_bst/weirdBST-zadani.py</url>
-          <line>176</line>
-          <option name="timeStamp" value="11" />
+          <line>298</line>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -125,34 +125,57 @@ def is_PRETTY_sequence(seq):
     """Overi, zdali je posloupnost 'seq' PRETTY.
     Pokud ano, vraci True, jinak False.
     """
-    is_pretty, number_of_even_values = is_pretty_sequence_recursive(seq, 0, len(seq) - 1)
-    return is_pretty
+    if len(seq) == 1:
+        return is_value_even(seq, 0)
 
+    if len(seq) % 2 == 0:
+        left_last_index = (len(seq) // 2) - 1
+    else:
+        left_last_index = (len(seq) // 2)
 
-def is_pretty_sequence_recursive(seq, actual_index, last_index):
-    if actual_index > last_index:
-        return False, 0
-
-    if actual_index == last_index:
-        even_values_count = 0
-        if is_value_even(seq, actual_index):
-            even_values_count += 1
-        return is_value_even(seq, actual_index), even_values_count
-
-    is_right_pretty, amount_of_even_values_right = is_pretty_sequence_recursive(seq, (len(seq) // 2) + 1, last_index)
-    is_left_pretty, amount_of_even_values_left = is_pretty_sequence_recursive(seq, actual_index + 1, first_index, len(seq) // 2)
+    left_side_even_amount, is_left_pretty = is_left_side_pretty(seq, 0, left_last_index)
+    right_side_even_amount, is_right_pretty = is_right_side_pretty(seq, left_last_index + 1, len(seq) - 1)
 
     is_prettiness_satisfied = is_left_pretty and not is_right_pretty
-    does_left_have_more_even_values = amount_of_even_values_left >= amount_of_even_values_right
-    number_of_even_values = amount_of_even_values_left + amount_of_even_values_right
+    does_left_have_more_even_values = left_side_even_amount >= right_side_even_amount
 
-    if is_value_even(seq, actual_index):
-        number_of_even_values += 1
+    return is_prettiness_satisfied and does_left_have_more_even_values
 
-    return is_prettiness_satisfied and does_left_have_more_even_values, number_of_even_values
+
+def is_left_side_pretty(seq, first_index, last_index):
+    left_side_even_counter = 0
+    is_left_pretty = False
+    while first_index <= last_index:
+        if is_value_even(seq, first_index):
+            left_side_even_counter += 1
+            is_left_pretty = True
+        else:
+            is_left_pretty = False
+        first_index += 1
+    return left_side_even_counter, is_left_pretty
+
+
+def is_right_side_pretty(seq, first_index, last_index):
+    right_side_even_counter = 0
+    is_right_pretty = False
+    while first_index <= last_index:
+        if is_value_even(seq, first_index):
+            right_side_even_counter += 1
+            is_right_pretty = True
+        else:
+            is_right_pretty = False
+        first_index += 1
+    return right_side_even_counter, is_right_pretty
+
+
+
+
 
 def is_value_even(seq, index):
     return seq[index] % 2 == 0
+
+
+is_PRETTY_sequence([-24358, -20930, -9701])
 
 # Ukol 3.
 # Jedna se o rozsireni Ukolu 1.
