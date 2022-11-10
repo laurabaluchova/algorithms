@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="started md_tree" />
+    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="md_tree first two finished">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/md_tree/md_tree_zadanie.py" beforeDir="false" afterPath="$PROJECT_DIR$/md_tree/md_tree_zadanie.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -175,13 +178,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662822355207</updated>
-    </task>
-    <task id="LOCAL-00009" summary="strangelist finished">
-      <created>1663506992988</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1663506992988</updated>
     </task>
     <task id="LOCAL-00010" summary="finished circular list is_circular a get_length">
       <created>1663615346877</created>
@@ -519,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668078898545</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="md_tree first two finished">
+      <created>1668086846839</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1668086846839</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -534,7 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finished build_heap and decrease_key" />
     <MESSAGE value="started extract_min" />
     <MESSAGE value="started build_heap" />
     <MESSAGE value="Updated tests" />
@@ -559,7 +561,8 @@
     <MESSAGE value="Added new exam files" />
     <MESSAGE value="Still not finished pretty sequence" />
     <MESSAGE value="started md_tree" />
-    <option name="LAST_COMMIT_MESSAGE" value="started md_tree" />
+    <MESSAGE value="md_tree first two finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="md_tree first two finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -581,8 +584,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/md_tree/md_tree_zadanie.py</url>
-          <line>515</line>
-          <option name="timeStamp" value="16" />
+          <line>586</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
