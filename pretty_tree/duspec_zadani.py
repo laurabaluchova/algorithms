@@ -175,6 +175,8 @@ def is_value_even(seq, index):
     return seq[index] % 2 == 0
 
 
+
+
 is_PRETTY_sequence([-24358, -20930, -9701])
 
 # Ukol 3.

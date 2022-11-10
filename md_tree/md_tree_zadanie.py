@@ -104,7 +104,20 @@ def isLeaf(node):
 #
 def getInterestingKeys(tree, keyList):
     # Pre pridanie zoznamu do zoznamu použi extend metódu
-    pass
+
+    return get_interesting_keys_recursive(keyList, tree.root)
+
+
+def get_interesting_keys_recursive(key_list, node):
+    if node is None:
+        return key_list
+
+    if (node.left is not None and isLeaf(node.left)) and (node.right is not None and isLeaf(node.right)):
+        key_list.extend(node.keys)
+
+    get_interesting_keys_recursive(key_list, node.left)
+    get_interesting_keys_recursive(key_list, node.right)
+
 
 # === 2. cast (10 bodu) ===
 #
@@ -122,7 +135,46 @@ def getInterestingKeys(tree, keyList):
 
 def isValidMDTree(tree):
     # Pre najvačší a najmenší možný integer použi sys.maxsize a -sys.maxsize
-    pass
+
+    if tree.root is None:
+        return True
+
+    if isLeaf(tree.root):
+        correct_keys_order = True
+        if tree.root.size > 1:
+            for i in range(0, tree.root.size - 1):
+                if tree.root.keys[i] > tree.root.keys[i + 1]:
+                    correct_keys_order = False
+
+        return correct_keys_order and 4 > tree.root.size > 0
+
+    return is_valid_md_tree_recursive(tree.root, -sys.maxsize, sys.maxsize)
+
+
+def is_valid_md_tree_recursive(node, min_value, max_value):
+    if node is None:
+        return True
+
+    if not isLeaf(node) and node.size != 3:
+        return False
+
+    if isLeaf(node) and 3 < node.size < 1:
+        return False
+
+    if node.size > 1:
+        for i in range(0, node.size - 1):
+            if node.keys[i] > node.keys[i + 1]:
+                return False
+
+    """if not is_key_bigger_than_node_keys(max_value, node) or not is_key_smaller_than_node_keys(min_value, node):
+        return False"""
+    if max(node.keys) > max_value or min(node.keys) < min_value:
+        return False
+
+    is_left_correct = is_valid_md_tree_recursive(node.left, min_value, min(node.keys))
+    is_right_correct = is_valid_md_tree_recursive(node.right, max(node.keys), max_value)
+
+    return is_left_correct and is_right_correct
 
 
 # === 3. cast (15 bodu) ===
@@ -151,7 +203,81 @@ def isValidMDTree(tree):
 # Pro vytvareni novych uzlu pouzijte Node() (viz vyse).
 #
 def insert(tree, key):
-    pass
+    node_to_insert = find_place_to_insert(key, tree.root)
+
+    if isLeaf(node_to_insert):
+        return insert_to_leaf(key, node_to_insert)
+
+    return insert_into_middle(key, node_to_insert)
+
+
+
+
+def insert_into_middle(key, node_to_insert):
+    while not isLeaf(node_to_insert):
+        new_node_to_insert = node_to_insert.right
+        new_value_to_insert = node_to_insert.keys[node_to_insert.size - 1]
+
+        node_to_insert.keys[node_to_insert.size - 1] = key
+
+        for i in range(0, node_to_insert.size - 1):
+            if node_to_insert.keys[i] > node_to_insert.keys[i + 1]:
+                node_to_insert.keys[i], node_to_insert.keys[i + 1] = node_to_insert.keys[i + 1], node_to_insert.keys[i]
+
+        node_to_insert = new_node_to_insert
+        key = new_value_to_insert
+
+    return insert_to_leaf(key, node_to_insert)
+
+
+def insert_to_leaf(key, node_to_insert):
+    if node_to_insert.size < 3:
+        node_to_insert.keys.append(key)
+        node_to_insert.size += 1
+        for i in range(0, node_to_insert.size - 1):
+            if node_to_insert.keys[i] > node_to_insert.keys[i + 1]:
+                node_to_insert.keys[i], node_to_insert.keys[i + 1] = node_to_insert.keys[i + 1], node_to_insert.keys[i]
+        return
+
+    else:
+        node = Node()
+        node.size = 1
+        node.keys = [node.keys[node.size - 1]]
+        node.parent = node_to_insert
+
+        node.keys[key.size] = key
+        for i in range(0, node_to_insert.size - 2):
+            if node_to_insert.keys[i] > node_to_insert.keys[i + 1]:
+                node_to_insert.keys[i], node_to_insert.keys[i + 1] = node_to_insert.keys[i + 1], node_to_insert.keys[i]
+        return
+
+
+
+def find_place_to_insert(key, node):
+    if node is None:
+        return
+
+    if is_key_bigger_than_node_keys(key, node):
+        find_place_to_insert(key, node.right)
+
+    if is_key_smaller_than_node_keys(key, node):
+        find_place_to_insert(key, node.left)
+
+    return node
+
+
+def is_key_bigger_than_node_keys(key, node):
+    for i in range(0, node.size):
+        if key > node.keys[i]:
+            return True
+    return False
+
+def is_key_smaller_than_node_keys(key, node):
+    for i in range(0, node.size):
+        if key < node.keys[i]:
+            return True
+    return False
+
 
 
 # === 4. cast (15 bodu) ===
