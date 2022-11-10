@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="Still not finished pretty sequence">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/md_tree/md_tree_zadanie.py" beforeDir="false" afterPath="$PROJECT_DIR$/md_tree/md_tree_zadanie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pretty_tree/duspec_zadani.py" beforeDir="false" afterPath="$PROJECT_DIR$/pretty_tree/duspec_zadani.py" afterDir="false" />
-    </list>
+    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="started md_tree" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,13 +175,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662822355207</updated>
-    </task>
-    <task id="LOCAL-00008" summary="list to strangelist completed">
-      <created>1663268196230</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1663268196230</updated>
     </task>
     <task id="LOCAL-00009" summary="strangelist finished">
       <created>1663506992988</created>
@@ -523,7 +512,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668028261251</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="started md_tree">
+      <created>1668078898545</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1668078898545</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -538,7 +534,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started du 05: odd_sort_array" />
     <MESSAGE value="finished build_heap and decrease_key" />
     <MESSAGE value="started extract_min" />
     <MESSAGE value="started build_heap" />
@@ -563,7 +558,8 @@
     <MESSAGE value="Neštastnikos" />
     <MESSAGE value="Added new exam files" />
     <MESSAGE value="Still not finished pretty sequence" />
-    <option name="LAST_COMMIT_MESSAGE" value="Still not finished pretty sequence" />
+    <MESSAGE value="started md_tree" />
+    <option name="LAST_COMMIT_MESSAGE" value="started md_tree" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

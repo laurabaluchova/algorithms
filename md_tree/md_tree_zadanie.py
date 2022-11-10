@@ -146,7 +146,7 @@ def isValidMDTree(tree):
                 if tree.root.keys[i] > tree.root.keys[i + 1]:
                     correct_keys_order = False
 
-        return correct_keys_order and 4 > tree.root.size > 0
+        return correct_keys_order and 0 < tree.root.size < 4
 
     return is_valid_md_tree_recursive(tree.root, -sys.maxsize, sys.maxsize)
 
@@ -158,7 +158,7 @@ def is_valid_md_tree_recursive(node, min_value, max_value):
     if not isLeaf(node) and node.size != 3:
         return False
 
-    if isLeaf(node) and 3 < node.size < 1:
+    if isLeaf(node) and not 0 < node.size < 4:
         return False
 
     if node.size > 1:
@@ -168,11 +168,11 @@ def is_valid_md_tree_recursive(node, min_value, max_value):
 
     """if not is_key_bigger_than_node_keys(max_value, node) or not is_key_smaller_than_node_keys(min_value, node):
         return False"""
-    if max(node.keys) > max_value or min(node.keys) < min_value:
+    if node.keys[node.size - 1] > max_value or node.keys[0] < min_value:
         return False
 
-    is_left_correct = is_valid_md_tree_recursive(node.left, min_value, min(node.keys))
-    is_right_correct = is_valid_md_tree_recursive(node.right, max(node.keys), max_value)
+    is_left_correct = is_valid_md_tree_recursive(node.left, min_value, node.keys[0])
+    is_right_correct = is_valid_md_tree_recursive(node.right, node.keys[node.size - 1], max_value)
 
     return is_left_correct and is_right_correct
 
