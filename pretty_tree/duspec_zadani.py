@@ -168,9 +168,6 @@ def is_right_side_pretty(seq, first_index, last_index):
     return right_side_even_counter, is_right_pretty
 
 
-
-
-
 def is_value_even(seq, index):
     return seq[index] % 2 == 0
 

@@ -212,7 +212,7 @@ def insert(tree, key):
 
 
 def insert_into_middle(key, node_to_insert):
-    while node_to_insert is not None:
+    while not isLeaf(node_to_insert):
         node_to_insert.keys.append(key)
         for i in reversed(range(1, 4)):
             if node_to_insert.keys[i] < node_to_insert.keys[i - 1]:
@@ -224,15 +224,12 @@ def insert_into_middle(key, node_to_insert):
             node.keys = [node_to_insert.keys[3]]
             node.parent = node_to_insert
             node_to_insert.keys.pop()
-            return
 
         key = node_to_insert.keys[3]
         node_to_insert.keys.pop()
         node_to_insert = node_to_insert.right
 
-        if isLeaf(node_to_insert):
-            insert_to_leaf(key, node_to_insert)
-        return
+    return insert_to_leaf(key, node_to_insert)
 
 
 def insert_to_leaf(key, node_to_insert):
@@ -247,13 +244,22 @@ def insert_to_leaf(key, node_to_insert):
     else:
         node = Node()
         node.size = 1
-        node.keys = [node_to_insert.keys[2]]
         node.parent = node_to_insert
 
-        node_to_insert.keys[2] = key
-        for i in reversed(range(1, node_to_insert.size)):
-            if node_to_insert.keys[i] < node_to_insert.keys[i - 1]:
-                node_to_insert.keys[i - 1], node_to_insert.keys[i] = node_to_insert.keys[i], node_to_insert.keys[i - 1]
+        if node_to_insert.keys[0] > key:
+            node.keys[0] = key
+            node_to_insert.left = node
+        elif node_to_insert.keys[2] < key:
+            node.keys[0] = key
+            node_to_insert.right = node
+        else:
+            node.keys = [node_to_insert.keys[2]]
+            node_to_insert.right = node
+
+            node_to_insert.keys[2] = key
+            for i in reversed(range(1, node_to_insert.size)):
+                if node_to_insert.keys[i] < node_to_insert.keys[i - 1]:
+                    node_to_insert.keys[i - 1], node_to_insert.keys[i] = node_to_insert.keys[i], node_to_insert.keys[i - 1]
         return
 
 

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="md_tree first two finished">
+    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="md_tree insert started">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/md_tree/md_tree_zadanie.py" beforeDir="false" afterPath="$PROJECT_DIR$/md_tree/md_tree_zadanie.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pretty_tree/duspec_zadani.py" beforeDir="false" afterPath="$PROJECT_DIR$/pretty_tree/duspec_zadani.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,13 +179,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662822355207</updated>
-    </task>
-    <task id="LOCAL-00010" summary="finished circular list is_circular a get_length">
-      <created>1663615346877</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1663615346877</updated>
     </task>
     <task id="LOCAL-00011" summary="finished circular list">
       <created>1663700907741</created>
@@ -522,7 +516,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668086846839</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="md_tree insert started">
+      <created>1668112925317</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1668112925318</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -537,7 +538,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started extract_min" />
     <MESSAGE value="started build_heap" />
     <MESSAGE value="Updated tests" />
     <MESSAGE value="finished du06" />
@@ -562,7 +562,8 @@
     <MESSAGE value="Still not finished pretty sequence" />
     <MESSAGE value="started md_tree" />
     <MESSAGE value="md_tree first two finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="md_tree first two finished" />
+    <MESSAGE value="md_tree insert started" />
+    <option name="LAST_COMMIT_MESSAGE" value="md_tree insert started" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -584,7 +585,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/md_tree/md_tree_zadanie.py</url>
-          <line>586</line>
+          <line>594</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
