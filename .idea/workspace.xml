@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="md_tree insert started">
+    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="md_tree insert finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/md_tree/md_tree_zadanie.py" beforeDir="false" afterPath="$PROJECT_DIR$/md_tree/md_tree_zadanie.py" afterDir="false" />
     </list>
@@ -178,13 +178,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662822355207</updated>
-    </task>
-    <task id="LOCAL-00011" summary="finished circular list">
-      <created>1663700907741</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1663700907741</updated>
     </task>
     <task id="LOCAL-00012" summary="finished recursion: fibonacci and power">
       <created>1663964280674</created>
@@ -522,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668112925318</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="md_tree insert finished">
+      <created>1668178037295</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1668178037296</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -537,7 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started build_heap" />
     <MESSAGE value="Updated tests" />
     <MESSAGE value="finished du06" />
     <MESSAGE value="Added cv07 files" />
@@ -562,7 +561,8 @@
     <MESSAGE value="started md_tree" />
     <MESSAGE value="md_tree first two finished" />
     <MESSAGE value="md_tree insert started" />
-    <option name="LAST_COMMIT_MESSAGE" value="md_tree insert started" />
+    <MESSAGE value="md_tree insert finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="md_tree insert finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -584,7 +584,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/md_tree/md_tree_zadanie.py</url>
-          <line>626</line>
+          <line>579</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>

@@ -306,8 +306,18 @@ def insert_to_leaf(key, node_to_insert):
 # Napoveda: Staci projit pouze jedinou vetev stromu.
 # S vyhodou lze vyuzit funkce findRec, jejiz hlavicku mate k dispozici.
 def findSuccKey(tree, key):
-    pass
+    return find_succ_key_recursive(key, tree.root, None)
 
+
+def find_succ_key_recursive(key, node, successor):
+    if node is None:
+        return successor
+
+    for i in range(0, node.size):
+        if key < node.keys[i]:
+            successor = node.keys[i]
+            return find_succ_key_recursive(key, node.left, successor)
+    return find_succ_key_recursive(key, node.right, successor)
 #
 # Nasleduje kod testu, NEMODIFIKUJTE JEJ               ##
 #
