@@ -4,7 +4,6 @@
     <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="md_tree insert started">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/md_tree/md_tree_zadanie.py" beforeDir="false" afterPath="$PROJECT_DIR$/md_tree/md_tree_zadanie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pretty_tree/duspec_zadani.py" beforeDir="false" afterPath="$PROJECT_DIR$/pretty_tree/duspec_zadani.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -585,8 +584,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/md_tree/md_tree_zadanie.py</url>
-          <line>594</line>
-          <option name="timeStamp" value="19" />
+          <line>626</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

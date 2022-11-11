@@ -203,33 +203,49 @@ def is_valid_md_tree_recursive(node, min_value, max_value):
 # Pro vytvareni novych uzlu pouzijte Node() (viz vyse).
 #
 def insert(tree, key):
-    node_to_insert = find_place_to_insert(key, tree.root)
+    if tree.root is None:
+        node = Node()
+        node.keys[0] = key
+        node.size = 1
+        tree.root = node
+        return
 
-    if isLeaf(node_to_insert):
-        return insert_to_leaf(key, node_to_insert)
-
-    return insert_into_middle(key, node_to_insert)
+    return insert_recursive(tree, key, tree.root)
 
 
-def insert_into_middle(key, node_to_insert):
-    while not isLeaf(node_to_insert):
-        node_to_insert.keys.append(key)
+def insert_recursive(tree, key, node):
+    if node is None:
+        return
+
+    if isLeaf(node):
+        return insert_to_leaf(key, node)
+
+    if node.keys[2] > key > node.keys[0]:
+        node.keys.append(key)
         for i in reversed(range(1, 4)):
-            if node_to_insert.keys[i] < node_to_insert.keys[i - 1]:
-                node_to_insert.keys[i - 1], node_to_insert.keys[i] = node_to_insert.keys[i], node_to_insert.keys[i - 1]
+            if node.keys[i] < node.keys[i - 1]:
+                node.keys[i - 1], node.keys[i] = node.keys[i], node.keys[i - 1]
 
-        if node_to_insert.right is None:
+        if node.right is None:
             node = Node()
             node.size = 1
-            node.keys = [node_to_insert.keys[3]]
-            node.parent = node_to_insert
-            node_to_insert.keys.pop()
+            node.keys = [node.keys[3]]
+            node.parent = node
+            node.keys.pop()
+            return
 
-        key = node_to_insert.keys[3]
-        node_to_insert.keys.pop()
-        node_to_insert = node_to_insert.right
+        key = node.keys[3]
+        node.keys.pop()
+        node = node.right
 
-    return insert_to_leaf(key, node_to_insert)
+        if isLeaf(node):
+            return insert_to_leaf(key, node)
+
+    if not isLeaf(node) and key > node.keys[2]:
+        return insert_recursive(tree, key, node.right)
+
+    if not isLeaf(node) and key < node.keys[0]:
+        return insert_recursive(tree, key, node.left)
 
 
 def insert_to_leaf(key, node_to_insert):
@@ -261,35 +277,6 @@ def insert_to_leaf(key, node_to_insert):
                 if node_to_insert.keys[i] < node_to_insert.keys[i - 1]:
                     node_to_insert.keys[i - 1], node_to_insert.keys[i] = node_to_insert.keys[i], node_to_insert.keys[i - 1]
         return
-
-
-def find_place_to_insert(key, node):
-    if isLeaf(node):
-        return node
-
-    if is_key_bigger_than_node_keys(key, node):
-        return find_place_to_insert(key, node.right)
-
-    elif is_key_smaller_than_node_keys(key, node):
-        return find_place_to_insert(key, node.left)
-
-    else:
-        return node
-
-
-def is_key_bigger_than_node_keys(key, node):
-    for i in range(0, node.size):
-        if key < node.keys[i]:
-            return False
-    return True
-
-
-def is_key_smaller_than_node_keys(key, node):
-    for i in range(0, node.size):
-        if key > node.keys[i]:
-            return False
-    return True
-
 
 
 # === 4. cast (15 bodu) ===
