@@ -55,14 +55,30 @@ def count(trie):
     vystup: pocet slov, ktere 'trie' obsahuje
     casova slozitost: O(n), kde n je pocet uzlu v 'trie'
     """
-    pass
+    return count_recursive(trie.root)
+
+
+def count_recursive(node):
+    final_word_count = 0
+
+    if node is None:
+        return 0
+
+    if node.succ_count == 0:
+        return 1
+
+    for i in range(0, len(node.succs)):
+        final_word_count += count_recursive(node.succs[i])
+
+    if node.accepting:
+        final_word_count += 1
+
+    return final_word_count
 
 
 # Ukol 2. Search (10 bodu)
 # Implementujte funkci search(trie, word), ktera zjisti, zda zadana trie
 # obsahuje zadane slovo. Funkce nesmi menit zadanou trie.
-
-
 
 def search(trie, word):
     """
@@ -71,7 +87,34 @@ def search(trie, word):
     vystup: True, pokud 'trie' obsahuje slovo 'word'; jinak False
     casova slozitost: O(d), kde d je delka slova 'word'
     """
-    pass
+    word_list = list(word)
+
+    if word == "":
+        return False
+
+    if trie.root is None:
+        return False
+
+    return search_recursive(word_list, trie.root, 0)
+
+
+def search_recursive(word_list, node, word_index):
+    if node is None:
+        return True
+
+    if word_index >= len(word_list):
+        return True
+
+    if node.succ_count > 1:
+        for i in range(0, len(node.succs)):
+            if node.succs[i] == word_list[word_index]:
+                return search_recursive(word_list, node.succs[i], word_index + 1)
+
+    elif node.succ_count == 1:
+        if node.succs[0] == word_list[word_index]:
+            return search_recursive(word_list, node.succs[0], word_index + 1)
+
+    return False
     
 
 # Ukol 3. Insert (15 bodu)
