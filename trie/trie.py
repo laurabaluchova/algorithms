@@ -88,12 +88,7 @@ def search(trie, word):
     casova slozitost: O(d), kde d je delka slova 'word'
     """
 
-    word_list = list(word)
-    word_list_indexes = []
-    for i in range(0, len(word_list)):
-        character_id = get_id(word_list[i])
-        word_list_indexes.append(character_id)
-
+    word_list_indexes = get_list_of_indexes(word)
     return search_recursive(word_list_indexes, trie.root, 0)
 
 
@@ -127,8 +122,39 @@ def insert(trie, word):
             'trie' musi zustat korektni
     casova slozitost: O(d), kde d je delka slova 'word'
     """
-    pass
+    word_list_indexes = get_list_of_indexes(word)
 
+    if trie.root is None:
+        node = Node()
+        trie.root = node
+
+    if word == "":
+        trie.root.accepting = True
+        return
+
+    insert_recursive(word_list_indexes, trie.root, 0)
+
+
+def insert_recursive(word_list_indexes, node, actual_word_index):
+    if node.accepting and actual_word_index == len(word_list_indexes):
+        return
+
+    if actual_word_index >= len(word_list_indexes):
+        node.accepting = True
+        return
+
+    if node.succs[word_list_indexes[actual_word_index]] is not None:
+        return insert_recursive(word_list_indexes, node.succs[word_list_indexes[actual_word_index]], actual_word_index + 1)
+
+    if node.succs[word_list_indexes[actual_word_index]] is None:
+        for i in range(actual_word_index, len(word_list_indexes)):
+            new_node = Node()
+            node.succ_count += 1
+            node.succs[word_list_indexes[i]] = new_node
+            if i == len(word_list_indexes) - 1:
+                new_node.accepting = True
+            node = new_node
+        return
 
 # Ukol 4. Delete (15 bodu)
 # Implementujte funkci delete(trie, word), ktera ze zadane trie smaze slovo
@@ -139,6 +165,15 @@ def insert(trie, word):
 # nevznikl neakceptujici list. Doporucujeme si vytvorit rekurzivni funkci,
 # ktera bude prochazet trie smerem dolu a pri navratu si bude vracet informaci
 # (napr. pravdivostni hodnotu) o tom, jestli ma dojit k odstraneni uzlu.
+
+
+def get_list_of_indexes(word):
+    word_list = list(word)
+    word_list_indexes = []
+    for i in range(0, len(word_list)):
+        character_id = get_id(word_list[i])
+        word_list_indexes.append(character_id)
+    return word_list_indexes
 
 
 def delete(trie, word):
