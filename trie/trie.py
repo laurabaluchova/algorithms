@@ -184,7 +184,33 @@ def delete(trie, word):
             'trie' musi zustat korektni
     casova slozitost: O(d), kde d je delka slova 'word'
     """
-    pass
+    word_list_indexes = get_list_of_indexes(word)
+
+    if trie.root is None:
+        return
+
+    delete_recursive(word_list_indexes, trie.root, 0)
+
+
+def delete_recursive(word_list_indexes, node, actual_word_index):
+    node_to_delete = False
+
+    if node.accepting and actual_word_index == len(word_list_indexes):
+        node_to_delete = True
+
+    if actual_word_index >= len(word_list_indexes):
+        return node_to_delete
+
+    if node.succs[word_list_indexes[actual_word_index]] is not None:
+        node_to_delete = delete_recursive(word_list_indexes, node.succs[word_list_indexes[actual_word_index]], actual_word_index + 1)
+
+    if node_to_delete:
+        node.succ_count = 0
+        node.succs = [None] * 26
+        node.accepting = False
+        return
+
+    return
 
 
 """
