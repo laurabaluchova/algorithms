@@ -87,32 +87,28 @@ def search(trie, word):
     vystup: True, pokud 'trie' obsahuje slovo 'word'; jinak False
     casova slozitost: O(d), kde d je delka slova 'word'
     """
+
     word_list = list(word)
+    word_list_indexes = []
+    for i in range(0, len(word_list)):
+        character_id = get_id(word_list[i])
+        word_list_indexes.append(character_id)
 
-    if word == "":
-        return False
-
-    if trie.root is None:
-        return False
-
-    return search_recursive(word_list, trie.root, 0)
+    return search_recursive(word_list_indexes, trie.root, 0)
 
 
-def search_recursive(word_list, node, word_index):
+def search_recursive(word_list_indexes, node, actual_word_index):
     if node is None:
+        return False
+
+    if node.accepting and actual_word_index == len(word_list_indexes):
         return True
 
-    if word_index >= len(word_list):
-        return True
+    if actual_word_index >= len(word_list_indexes):
+        return False
 
-    if node.succ_count > 1:
-        for i in range(0, len(node.succs)):
-            if node.succs[i] == word_list[word_index]:
-                return search_recursive(word_list, node.succs[i], word_index + 1)
-
-    elif node.succ_count == 1:
-        if node.succs[0] == word_list[word_index]:
-            return search_recursive(word_list, node.succs[0], word_index + 1)
+    if node.succs[word_list_indexes[actual_word_index]] is not None:
+        return search_recursive(word_list_indexes, node.succs[word_list_indexes[actual_word_index]], actual_word_index + 1)
 
     return False
     

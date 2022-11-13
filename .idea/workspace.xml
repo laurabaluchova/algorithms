@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="md_tree finished all">
+    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="started trie and finished trie count">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trie/trie.py" beforeDir="false" afterPath="$PROJECT_DIR$/trie/trie.py" afterDir="false" />
     </list>
@@ -178,13 +178,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662822355207</updated>
-    </task>
-    <task id="LOCAL-00013" summary="finished du03">
-      <created>1664119900905</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1664119900905</updated>
     </task>
     <task id="LOCAL-00014" summary="Added task files">
       <created>1664122367145</created>
@@ -522,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668186753993</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="started trie and finished trie count">
+      <created>1668287716114</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1668287716115</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -537,7 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finished du06" />
     <MESSAGE value="Added cv07 files" />
     <MESSAGE value="finished search" />
     <MESSAGE value="finished insert and height" />
@@ -562,7 +561,8 @@
     <MESSAGE value="md_tree insert started" />
     <MESSAGE value="md_tree insert finished" />
     <MESSAGE value="md_tree finished all" />
-    <option name="LAST_COMMIT_MESSAGE" value="md_tree finished all" />
+    <MESSAGE value="started trie and finished trie count" />
+    <option name="LAST_COMMIT_MESSAGE" value="started trie and finished trie count" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -586,6 +586,11 @@
           <url>file://$PROJECT_DIR$/md_tree/md_tree_zadanie.py</url>
           <line>589</line>
           <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/trie/trie.py</url>
+          <line>99</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
