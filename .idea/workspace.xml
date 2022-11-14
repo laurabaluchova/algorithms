@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="finished trie insert">
+    <list default="true" id="b1c6dcf7-6378-4d13-ba8e-16798931af4f" name="Changes" comment="started trie delete">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trie/trie.py" beforeDir="false" afterPath="$PROJECT_DIR$/trie/trie.py" afterDir="false" />
     </list>
@@ -178,13 +178,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1662822355207</updated>
-    </task>
-    <task id="LOCAL-00016" summary="binary_search_recursive finished">
-      <created>1664217259160</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1664217259160</updated>
     </task>
     <task id="LOCAL-00017" summary="min_max_search_recursive finished">
       <created>1664381482322</created>
@@ -522,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668369306298</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="started trie delete">
+      <created>1668373381537</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1668373381537</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -537,7 +537,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="finished insert and height" />
     <MESSAGE value="started correctness of BST" />
     <MESSAGE value="Finished BST correctness" />
     <MESSAGE value="Finished binary search trees cv 07" />
@@ -562,7 +561,8 @@
     <MESSAGE value="started trie and finished trie count" />
     <MESSAGE value="finished trie search" />
     <MESSAGE value="finished trie insert" />
-    <option name="LAST_COMMIT_MESSAGE" value="finished trie insert" />
+    <MESSAGE value="started trie delete" />
+    <option name="LAST_COMMIT_MESSAGE" value="started trie delete" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -589,5 +589,10 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="actual_word_index" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

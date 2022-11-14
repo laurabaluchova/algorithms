@@ -189,28 +189,45 @@ def delete(trie, word):
     if trie.root is None:
         return
 
-    delete_recursive(word_list_indexes, trie.root, 0)
+    should_delete_root = delete_recursive(word_list_indexes, trie.root, 0)
+
+    if should_delete_root:
+        trie.root = None
 
 
 def delete_recursive(word_list_indexes, node, actual_word_index):
-    node_to_delete = False
+    should_delete = False
 
     if node.accepting and actual_word_index == len(word_list_indexes):
-        node_to_delete = True
+        if node.succ_count >= 1:
+            node.accepting = False
+            return should_delete
+        should_delete = True
+        return should_delete
 
     if actual_word_index >= len(word_list_indexes):
-        return node_to_delete
+        return should_delete
 
     if node.succs[word_list_indexes[actual_word_index]] is not None:
-        node_to_delete = delete_recursive(word_list_indexes, node.succs[word_list_indexes[actual_word_index]], actual_word_index + 1)
+        should_delete = delete_recursive(word_list_indexes, node.succs[word_list_indexes[actual_word_index]], actual_word_index + 1)
 
-    if node_to_delete:
+    if node.succ_count > 1 and should_delete:
+        node.succs[word_list_indexes[actual_word_index]] = None
+        node.succ_count -= 1
+        should_delete = False
+        return should_delete
+
+    if node.succ_count <= 1 and should_delete:
         node.succ_count = 0
         node.succs = [None] * 26
-        node.accepting = False
-        return
+        if node.accepting:
+            should_delete = False
+        return should_delete
 
-    return
+    return should_delete
+
+
+
 
 
 """
